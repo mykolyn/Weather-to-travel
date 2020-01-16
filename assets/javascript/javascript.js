@@ -1,3 +1,8 @@
+//js test
+$(".test").on("click", function(){
+    alert("jquery works yay :)")
+})
+
 //retrieve input and store into variables
 
 //AJAX call to map api
