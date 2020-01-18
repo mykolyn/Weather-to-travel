@@ -1,9 +1,6 @@
-//js test
-$(".test").on("click", function () {
-    alert("jquery works yay :)")
-})
 
 
+// -------------------------code for video playing in background---------------
 function deferVideo() {
 
   //defer html5 video loading
@@ -19,7 +16,7 @@ $("video source").each(function() {
 }
 window.onload = deferVideo;
 
-
+//-------------------------------------------------------------------------------
 
 
 //retrieve input and store into variables
@@ -27,14 +24,6 @@ window.onload = deferVideo;
 var startPoint;
 var endPoint;
 
-// On click event
-$("#submit").on("click", function (event) {
-    event.preventDefault();
-    var startPoint = $("#pointA").val();
-    var endPoint = $("#pointB").val();
-    console.log("Point A: " + startPoint);
-    console.log("Point B: " + endPoint)
-})
 
 
 
@@ -51,6 +40,28 @@ $(document).ready(function () {
 
 
 //AJAX call to map api
+
+$("#submit").on("click", function (event) {
+  event.preventDefault();
+  var startPoint = $("#pointA").val();
+  var endPoint = $("#pointB").val();
+  console.log("Point A: " + startPoint);
+  console.log("Point B: " + endPoint)
+  var directionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + startPoint + "&destination=" + endPoint + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
+  $.ajax({
+    url: directionsURL,
+    method: "GET",
+    header:{
+      "cross_origiin-ETC...":"*"
+    }
+  })
+    
+    .then(function(response) {
+        var results = response.data;
+        console.log(results)
+        console.log(results.routes[0].legs[0].distance.text)
+    })
+})
 
 //AJAX call to convert locations into coordinates
 
