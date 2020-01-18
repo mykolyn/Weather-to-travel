@@ -3,6 +3,25 @@ $(".test").on("click", function () {
     alert("jquery works yay :)")
 })
 
+
+function deferVideo() {
+
+  //defer html5 video loading
+$("video source").each(function() {
+  var sourceFile = $(this).attr("data-src");
+  $(this).attr("src", sourceFile);
+  var video = this.parentElement;
+  video.load();
+  // uncomment if video is not autoplay
+  //video.play();
+});
+
+}
+window.onload = deferVideo;
+
+
+
+
 //retrieve input and store into variables
 
 var startPoint;
@@ -34,6 +53,9 @@ $(document).ready(function () {
 //AJAX call to map api
 
 //AJAX call to convert locations into coordinates
+
+// function to find location every 50 miles from starting point:
+// 
 
 //AJAX call to weather api with coordinates
 
