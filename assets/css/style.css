@@ -2,6 +2,11 @@ body {
     background-color:red;
 }
 
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+
+}
 #homeButton{
     margin-right: 20px;
     margin-left: 1040px;
@@ -12,25 +17,56 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-input {
-    width: 100%;
+
+.header {
+  font-family: 'Amatic SC', cursive;
 }
+
+.header-text{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.header-bttn{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+/* -----------------------input form------------------------- */
+
+input {
+    width: 58%;
+}
+
+
+#userInput {
+  background-color: #5963AC;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.submit-round {
+  border-radius: 25px;
+  margin-top: -1px;
+}
+
+.card-input{
+  margin: 20px;
+}
+/* -------------------end of input form--------------------- */
+
 #map {
     height: 600px;
     width: 100%;
     background-color: lightslategray;
 }
-
-#userInput {
-  background-color: #5963AC;
-}
-
-/* jumbotron */
+/* ------------------------jumbotron -------------------------------*/
 /* https://codepen.io/JacobLett/pen/LmWvLZ */
 .jumbotron {
   position: relative;
   overflow: hidden;
   background-color:black;
+  
 }
 .jumbotron video {
   position: absolute;
@@ -48,9 +84,7 @@ input {
 }
 
 
-
-
-/* end of jumbotron */
+/*--------------------- end of jumbotron ------------------------*/
 
 /* center cards on aboutme section */
 /* https://stackoverflow.com/questions/39031224/how-to-center-cards-in-bootstrap-4 */
@@ -210,10 +244,10 @@ input {
   }
 
   /* ----------------end of footer------------------ */
-  .dot {
-    height: 25px;
-    width: 25px;
-    background-color: rgb(47, 214, 214);
-    border-radius: 50%;
-    display: inline-block;
+ 
+
+  .table {
+    color: #664BF3;
+    font-weight: bold;
+
   }
