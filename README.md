@@ -1,6 +1,7 @@
 # Weather to Travel
 Problem Statement: Weather conditions can vary greatly between cities.
 This app is meant to help people plan the perfect road trips. The user needs to fill out a simple sign-up authentication(user validation). User can start using the app by entering their starting point and destination, and the Google maps API will map out the best route. Given that information, the weather API will give the user the weather forecast for their route. 
+* [Visit our product page](https://mykolyn.github.io/Weather-to-travel/)
 
 ## MVP
 
