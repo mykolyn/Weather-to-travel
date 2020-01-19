@@ -1,5 +1,7 @@
 body {
-    background-color:red;
+  
+    background: url(white-waves.png) ;
+    opacity: 1;
 }
 
 p {
@@ -7,10 +9,13 @@ p {
   color: #fff;
 
 }
-#homeButton{
+
+
+#homeButton {
     margin-right: 20px;
     margin-left: 1040px;
 }
+
 #userInput {
     background-color: aliceblue;
     padding: 20px;
