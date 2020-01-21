@@ -72,24 +72,7 @@
             </div>
         </div>
 
-        <!-- user input form - address/location -->
-        <div id="userInput">
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <p>Start:</p>
-                        <input type="text" placeholder=" Apple HQ" id="pointA">
-                    </div>
-                    <div class="col">
-                        <p>Destination:</p>
-                        <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
-                            class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
-                            Me</button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
+     
 
 
         <!-- about me -->
@@ -144,9 +127,47 @@
             </div>
         </div>
 
+           <!-- user input form - address/location -->
+           <div id="userInput">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <p>Start:</p>
+                        <input type="text" placeholder=" Apple HQ" id="pointA">
+                    </div>
+                    <div class="col">
+                        <p>Destination:</p>
+                        <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
+                            class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
+                            Me</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
         <!-- map - route info -->
 
-        <div id="map">Map goes here</div>
+        <div class="row">
+            <div class="col-sm-4"><div class="card">
+                <div class="card-header">
+                  Route Info
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">turn left</h5>
+                  <h5 class="card-title">turn right</h5>
+                  <h5 class="card-title">go straight</h5>
+
+                  <p  class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius alias maxime, dolor voluptas atque facere ducimus adipisci ab magnam pariatur. Sit delectus esse veniam sed quidem accusantium aperiam atque dolorum!</p>
+                </div>
+              </div></div>
+            <div class="col-sm-8">
+                <div id="map">Google Maps</div>
+               
+            </div>
+
+        </div>
+
 
         <!-- weather forecast on route output - temperature/street or city -->
         <div id="weather">
@@ -156,8 +177,9 @@
                 <th scope="col">Wind Speed</th>
                 <th scope="col">Humidity</th>
                 <th scope="col">Temperature</th>
-                <th scope="col">Sunrise</th>
-                <th scope="col">Sunset</th>
+                <!-- removed for now -->
+                <!-- <th scope="col">Sunrise</th>
+                <th scope="col">Sunset</th> -->
                 <th scope="col">Sky Visibility</th>
                 <tbody></tbody>
             </table>
@@ -266,6 +288,7 @@
 
 <!-- Google Maps API -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async
+    defer></script>
 
 </html>
