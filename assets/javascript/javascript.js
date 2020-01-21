@@ -32,7 +32,7 @@ $(document).ready(function () {
     var map;
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 38, lng: -98},
-        zoom: 4.5
+        zoom: 3
       });
 
 })
@@ -51,15 +51,26 @@ $("#submit").on("click", function (event) {
   $.ajax({
     url: directionsURL,
     method: "GET",
-    header:{
-      "cross_origiin-ETC...":"*"
-    }
+    // header:{
+    //   "cross_origiin-ETC...":"*"
+    // }
   })
     
     .then(function(response) {
         var results = response.data;
-        console.log(results)
-        console.log(results.routes[0].legs[0].distance.text)
+        console.log(response)
+        console.log(response.routes[0].legs[0].steps[0].html_instructions)
+        var distanceValue = 0;
+        for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
+          var steps = $("<h6>");
+          steps.addClass("card-title");
+          steps.html(response.routes[0].legs[0].steps[i].html_instructions);
+          $("#directions").append(steps);
+          distanceValue = distanceValue + response.routes[0].legs[0].steps[i].distance.value;
+          console.log(distanceValue); 
+          // distanceValue will be used to determine locations for which to check weather
+        }
+        
     })
 })
 
