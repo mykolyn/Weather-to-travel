@@ -1,26 +1,103 @@
 body {
-    background-color: lightblue;
+  
+    background: url(white-waves.png) ;
+    opacity: 1;
 }
-#homeButton{
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+
+}
+
+
+#homeButton {
     margin-right: 20px;
     margin-left: 1040px;
 }
+
 #userInput {
     background-color: aliceblue;
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-input {
-    width: 100%;
+
+.header {
+  font-family: 'Amatic SC', cursive;
 }
+
+.header-text{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.header-bttn{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+/* -----------------------input form------------------------- */
+
+input {
+    width: 58%;
+}
+
+
+#userInput {
+  background-color: #5963AC;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.submit-round {
+  border-radius: 25px;
+  margin-top: -1px;
+}
+
+.card-input{
+  margin: 20px;
+}
+/* -------------------end of input form--------------------- */
+
 #map {
     height: 600px;
     width: 100%;
     background-color: lightslategray;
 }
+/* ------------------------jumbotron -------------------------------*/
+/* https://codepen.io/JacobLett/pen/LmWvLZ */
+.jumbotron {
+  position: relative;
+  overflow: hidden;
+  background-color:black;
+  
+}
+.jumbotron video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width:100%;
+  height:100%;
+  /*  object-fit is not supported on IE  */
+  object-fit: cover;
+  opacity:0.5;
+}
+.jumbotron .container {
+  z-index: 2;
+  position: relative;
+}
 
 
+/*--------------------- end of jumbotron ------------------------*/
+
+/* center cards on aboutme section */
+/* https://stackoverflow.com/questions/39031224/how-to-center-cards-in-bootstrap-4 */
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
 
 
 /* ----------------footer------------------ */
@@ -173,3 +250,10 @@ input {
   }
 
   /* ----------------end of footer------------------ */
+ 
+
+  .table {
+    color: #664BF3;
+    font-weight: bold;
+
+  }
