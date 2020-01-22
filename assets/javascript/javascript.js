@@ -29,13 +29,14 @@ var endPoint;
 
 // Put USA map on screen onload:
 $(document).ready(function () {    
-    var map;
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 38, lng: -98},
-        zoom: 3
-      });
-
+  var map;
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 38, lng: -96},
+    zoom: 4.1
+  });
 })
+
+
 
 
 
@@ -47,13 +48,34 @@ $("#submit").on("click", function (event) {
   var endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
   console.log("Point B: " + endPoint)
+
+
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    var mapOptions = {
+      zoom:4,
+      center: {lat: 38, lng: -96}
+    }
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    directionsRenderer.setMap(map);
+  
+  
+    var request = {
+      origin: startPoint,
+      destination: endPoint,
+      travelMode: 'DRIVING'
+    };
+    directionsService.route(request, function(result, status) {
+      if (status == 'OK') {
+        directionsRenderer.setDirections(result);
+      }
+    });
+  
+
   var directionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + startPoint + "&destination=" + endPoint + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
   $.ajax({
     url: directionsURL,
-    method: "GET",
-    // header:{
-    //   "cross_origiin-ETC...":"*"
-    // }
+    method: "GET"
   })
     
     .then(function(response) {
@@ -70,9 +92,10 @@ $("#submit").on("click", function (event) {
           console.log(distanceValue); 
           // distanceValue will be used to determine locations for which to check weather
         }
-        
     })
 })
+
+
 
 //AJAX call to convert locations into coordinates
 
