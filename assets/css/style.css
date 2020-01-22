@@ -91,13 +91,26 @@ input {
 
 /*--------------------- end of jumbotron ------------------------*/
 
-/* center cards on aboutme section */
+/* --------------------center cards on aboutme section ------------------------------*/
 /* https://stackoverflow.com/questions/39031224/how-to-center-cards-in-bootstrap-4 */
 .card {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
 }
+
+
+
+/* ----------------------------output: route directions------------------------------- */
+
+/* scroll bar */
+/* http://jsfiddle.net/q4CqZ/6/ */
+.dyn-height {
+  width:100%;
+  max-height:500px;
+  overflow-y:auto;
+}
+
 
 
 /* ----------------footer------------------ */
