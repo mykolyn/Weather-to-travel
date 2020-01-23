@@ -10,7 +10,6 @@ p {
 
 }
 
-
 #homeButton {
     margin-right: 20px;
     margin-left: 1040px;
@@ -257,3 +256,25 @@ input {
     font-weight: bold;
 
   }
+
+    /* ----------------scrollify------------------ */
+
+  #one{
+    padding-top: 230px;
+  }
+  #two{
+    padding-top: 380px;
+  }
+  #three{
+    padding-top: 53px;
+  }
+  #four{
+    padding-top: 70px;
+  }
+  #five{
+    padding-top: 70px;
+  }
+  #six{
+    padding-top: 60px;
+  }
+
