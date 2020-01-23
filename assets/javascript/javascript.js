@@ -1,5 +1,4 @@
 
-
 // -------------------------code for video playing in background---------------
 function deferVideo() {
 
@@ -24,16 +23,47 @@ window.onload = deferVideo;
 var startPoint;
 var endPoint;
 
+//-------------------------------------------------------------------------------
+
+// map functions
+function initMap() {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsRenderer = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:4,
+    center: {lat: 38, lng: -96}
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById('directions'));
+}
+
+function calcRoute() {
+  var request = {
+    origin: startPoint,
+    destination: endPoint,
+    travelMode: 'DRIVING'
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+      directionsRenderer.setDirections(response);
+    }
+  });
+}
 
 
 
 // Put USA map on screen onload:
-$(document).ready(function () {    
+$(document).ready(function () {
+// initMap();
+  /*
   var map;
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38, lng: -96},
     zoom: 4.1
   });
+*/
+
 })
 
 
@@ -44,12 +74,14 @@ $(document).ready(function () {
 
 $("#submit").on("click", function (event) {
   event.preventDefault();
-  var startPoint = $("#pointA").val();
-  var endPoint = $("#pointB").val();
+  startPoint = $("#pointA").val();
+  endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
   console.log("Point B: " + endPoint)
 
+ calcRoute();
 
+/*
     var directionsService = new google.maps.DirectionsService();
     var directionsRenderer = new google.maps.DirectionsRenderer();
     var mapOptions = {
@@ -58,8 +90,8 @@ $("#submit").on("click", function (event) {
     }
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     directionsRenderer.setMap(map);
-  
-  
+
+
     var request = {
       origin: startPoint,
       destination: endPoint,
@@ -70,14 +102,14 @@ $("#submit").on("click", function (event) {
         directionsRenderer.setDirections(result);
       }
     });
-  
+
 
   var directionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + startPoint + "&destination=" + endPoint + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
   $.ajax({
     url: directionsURL,
     method: "GET"
   })
-    
+
     .then(function(response) {
         var results = response.data;
         console.log(response)
@@ -89,10 +121,13 @@ $("#submit").on("click", function (event) {
           steps.html(response.routes[0].legs[0].steps[i].html_instructions);
           $("#directions").append(steps);
           distanceValue = distanceValue + response.routes[0].legs[0].steps[i].distance.value;
-          console.log(distanceValue); 
+          console.log(distanceValue);
           // distanceValue will be used to determine locations for which to check weather
         }
     })
+
+*/
+
 })
 
 
@@ -100,7 +135,7 @@ $("#submit").on("click", function (event) {
 //AJAX call to convert locations into coordinates
 
 // function to find location every 50 miles from starting point:
-// 
+//
 
 //AJAX call to weather api with coordinates
 
@@ -118,7 +153,7 @@ $("#submit").on("click", function (event) {
     url: queryURL,
     method: "GET"
   })
-    
+
     .then(function(response) {
         var results = response.data;
         console.log(results)
