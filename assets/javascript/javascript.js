@@ -113,8 +113,13 @@ $("#submit").on("click", function (event) {
     .then(function(response) {
         var results = response.data;
         console.log(response)
-        console.log(response.routes[0].legs[0].steps[0].html_instructions)
-        var distanceValue = 0;
+        if (response.status == "NOT_FOUND"){
+          $("#pointA").val("Invalid Adress");
+          $("#pointB").val("Please Try Again");
+        }
+        else{
+          console.log(response.routes[0].legs[0].steps[0].html_instructions)
+          var distanceValue = 0;
         for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
           var steps = $("<h6>");
           steps.addClass("card-title");
@@ -124,6 +129,7 @@ $("#submit").on("click", function (event) {
           console.log(distanceValue);
           // distanceValue will be used to determine locations for which to check weather
         }
+      }
     })
 
 */
