@@ -20,6 +20,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/checkweather.css">
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d9163b5035.js" crossorigin="anonymous"></script>
 
@@ -41,7 +43,8 @@
                 <ul class="nav-list">
                     <li>
                         <a href="index.html">Home</a></li>
-                        <li>                    <li>
+                    <li>
+                    <li>
                         <a href="#!">Check Weather</a>
                     </li>
                     <li>
@@ -60,74 +63,76 @@
     </section>
 
 
-        <!-- user input form - address/location -->
-        <section class="item" id="three">
-            <div id="userInput">
-                <form>
-                    <div class="row">
-                        <div class="col">
-                            <p>Start:</p>
-                            <input type="text" placeholder=" Apple HQ" id="pointA">
-                        </div>
-                        <div class="col">
-                            <p>Destination:</p>
-                            <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
-                                class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
-                                Me</button>
-                        </div>
+    <!-- user input form - address/location -->
+    <div class="container">
+        <div id="userInput">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <p>Start:</p>
+                        <input type="text" placeholder=" Apple HQ" id="pointA">
                     </div>
+                    <div class="col">
+                        <p>Destination:</p>
+                        <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
+                            class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
+                            Me</button>
+                    </div>
+                </div>
 
-                </form>
-            </div>
+            </form>
+        </div>
 
-            <!-- map - route info -->
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fas fa-route"></i>   Route Info
-                        </div>
-                        <div class="card-body dyn-height" id="directions">
-                            <p class="font_awesome_sample">
-                                
-                            </p>
-                            <!-- <h5 class="card-title">turn left</h5>
+        <!-- map - route info -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-route"></i> Route Info
+                    </div>
+                    <div class="card-body dyn-height" id="directions">
+                        <p class="font_awesome_sample">
+
+                        </p>
+                        <!-- <h5 class="card-title">turn left</h5>
                             <h5 class="card-title">turn right</h5>
                              <h5 class="card-title">go straight</h5>
 
                             <p  class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius alias maxime, dolor voluptas atque facere ducimus adipisci ab magnam pariatur. Sit delectus esse veniam sed quidem accusantium aperiam atque dolorum!</p> -->
-                        </div>
                     </div>
                 </div>
-                <div class="col-sm-8">
-                    <div id="map">Google Maps</div>
-                </div>
             </div>
+            <div class="col-sm-8">
+                <div id="map">Google Maps</div>
+            </div>
+        </div>
 
-            <!-- weather forecast on route output - temperature/street or city -->
-            <div id="weather">
-                <table class="table">
-                    <th scope="col"> </th>
-                    <th scope="col">City</th>
-                    <th scope="col">Wind Speed</th>
-                    <th scope="col">Humidity</th>
-                    <th scope="col">Temperature</th>
-                    <!-- removed for now -->
-                    <!-- <th scope="col">Sunrise</th>
+        <!-- weather forecast on route output - temperature/street or city -->
+   
+        <div class="card">
+        <div id="weather">
+            <table class="table">
+                <th scope="col"> </th>
+                <th scope="col">City</th>
+                <th scope="col">Wind Speed</th>
+                <th scope="col">Humidity</th>
+                <th scope="col">Temperature</th>
+                <!-- removed for now -->
+                <!-- <th scope="col">Sunrise</th>
                     <th scope="col">Sunset</th> -->
-                    <th scope="col">Sky Visibility</th>
-                    <tbody></tbody>
-                </table>
-            </div>
-    </div>
-    </section>
+                <th scope="col">Sky Visibility</th>
+                <tbody></tbody>
+            </table>
+        </div>
+        </div></div></div>
+   
     <!-- end of container -->
     </div>
 
 
 
-  
- 
+
+
 
     <!-- footer - links to github accounts & linkedIn -->
     <section class="item" id="six">

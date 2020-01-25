@@ -850,13 +850,13 @@ function first(){
 function second(){
   console.log('second')
 }
-let run = async ()=>{
+let run1 = async ()=>{
   await delay(2000);
   first();
   await delay(2000)
   second();
 }
-run();
+run1();
 
 //AJAX call to convert locations into coordinates
 
