@@ -1,5 +1,4 @@
 
-
 // -------------------------code for video playing in background---------------
 function deferVideo() {
 
@@ -353,7 +352,6 @@ function getGeocodeCity(coordinates) {
 // example run of geocode API
 getGeocodeCity("29.76043,-95.3698084");
 
-
 //event listener for submit bttn
 $("#submit").on("click", function (event) {
   event.preventDefault();
@@ -363,7 +361,9 @@ $("#submit").on("click", function (event) {
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
+
   console.log("Point B: " + endPoint)
+
 
   var styledMapType = new google.maps.StyledMapType(
     [
@@ -717,7 +717,6 @@ async function delay(ms) {
 function first(){
   // console.log('first')
   console.log("CITY NAMES ARE: " + convertedCoords)
-
 }
 function second(){
   console.log('second')
@@ -787,6 +786,33 @@ function second(){
       return formattedTime
   }
 
+}
+let run = async ()=>{
+  await delay(2000);
+  first();
+  await delay(5000)
+  second();
+  
+
+}
+
+run();
+
+
+
+})
+
+// store location into localstorage
+document.getElementById("pointA").value = localStorage.getItem("start");
+document.getElementById("pointB").value = localStorage.getItem("destination");
+
+function saveComment() {
+  var start = document.getElementById("pointA").value;
+  var destination = document.getElementById("pointB").value;
+  localStorage.setItem("start", start);
+  localStorage.setItem("destination", destination);
+  return false;
+}
 
 }
 let run = async ()=>{
