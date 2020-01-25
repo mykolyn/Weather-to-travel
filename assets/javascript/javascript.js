@@ -812,6 +812,7 @@ function saveComment() {
   localStorage.setItem("destination", destination);
   return false;
 }
+
 //AJAX call to convert locations into coordinates
 
 // function to find location every 50 miles from starting point:
