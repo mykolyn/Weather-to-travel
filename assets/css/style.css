@@ -284,6 +284,13 @@ input {
 }
 
 
+/* font awesome */
+.fas {
+  font-size: 2em;
+  color: #f8c967;
+  margin-right: 5px;
+}
+
 
 /* ----------------footer------------------ */
 /* https://codepen.io/matheusalmeida/pen/aeLMMr?page=2 */
