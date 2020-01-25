@@ -362,6 +362,9 @@ $("#submit").on("click", function (event) {
   var endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
 
+  console.log("Point B: " + endPoint)
+
+
   var styledMapType = new google.maps.StyledMapType(
     [
      {
@@ -714,7 +717,6 @@ async function delay(ms) {
 function first(){
   // console.log('first')
   console.log("CITY NAMES ARE: " + convertedCoords)
-
 }
 function second(){
   console.log('second')
@@ -784,7 +786,6 @@ function second(){
       return formattedTime
   }
 
-
 }
 let run = async ()=>{
   await delay(2000);
@@ -812,6 +813,22 @@ function saveComment() {
   localStorage.setItem("destination", destination);
   return false;
 }
+
+}
+let run = async ()=>{
+  await delay(2000);
+  first();
+  await delay(5000)
+  second();
+  
+
+}
+
+run();
+
+
+
+})
 
 //AJAX call to convert locations into coordinates
 
