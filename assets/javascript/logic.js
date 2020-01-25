@@ -71,6 +71,11 @@ $(document).on("click", "#submit", function () {
     })
 })
 
+hive> select; from_unixtime(timeConverter("convertedMorning", 'HH:mm:ss'),"hh:mm:ss a");
+
+
+
+
 function timeConverter(a) {
     let unix_timestamp = a
     // Create a new JavaScript Date object based on the timestamp

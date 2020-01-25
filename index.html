@@ -33,31 +33,31 @@
     <!-- nav bar - home/about me -->
     <section class="navigation sticky">
         <div class="nav-container">
-          <div class="brand">
-            <a href="#!">Logo</a>
-          </div>
-          <nav>
-            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-            <ul class="nav-list">
-              <li>
-                <a href="#!">Home</a>
-              </li>
-              <li>
-                <a href="#!">About</a>
-              </li>
-              <li>
-                <a href="#!">Team</a>
-              </li>
-             
-              <li>
-                <a href="#!">Contact</a>
-              </li>
-            </ul>
-          </nav>
+            <div class="brand">
+                <a href="#!">Logo</a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#!">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!">About</a>
+                    </li>
+                    <li>
+                        <a href="#!">Team</a>
+                    </li>
+
+                    <li>
+                        <a href="#!">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </section>
-      
-      <!-- <article>
+    </section>
+
+    <!-- <article>
         <h2>Navigation</h2>
         <p>Responsive Dropdown Navigation Bar.</p>
         <p>Want to see how it's made? <a href="http://www.taniarascia.com/responsive-dropdown-navigation-bar/">Read the tutorial!</a></p>
@@ -166,11 +166,11 @@
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-header">
-                            <i class="fas fa-route"></i>   Route Info
+                            <i class="fas fa-route"></i> Route Info
                         </div>
                         <div class="card-body dyn-height" id="directions">
                             <p class="font_awesome_sample">
-                                
+
                             </p>
                             <!-- <h5 class="card-title">turn left</h5>
                             <h5 class="card-title">turn right</h5>
@@ -187,16 +187,21 @@
 
             <!-- weather forecast on route output - temperature/street or city -->
             <div id="weather">
-                <table class="table">
-                    <th scope="col"> </th>
-                    <th scope="col">City</th>
-                    <th scope="col">Wind Speed</th>
-                    <th scope="col">Humidity</th>
-                    <th scope="col">Temperature</th>
-                    <th scope="col">Sunrise</th>
-                    <th scope="col">Sunset</th>
-                    <th scope="col">Sky Visibility</th>
+                <table class="weather-table">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">City</th>
+                            <th scope="col">Wind Speed</th>
+                            <th scope="col">Humidity</th>
+                            <th scope="col">Temperature</th>
+                            <th scope="col">Sunrise</th>
+                            <th scope="col">Sunset</th>
+                            <th scope="col">Sky Visibility</th>
+                        </tr>
+                    </thead>
                     <tbody></tbody>
+
                 </table>
             </div>
     </div>
@@ -205,7 +210,7 @@
     </div>
 
     <!-- about the project -->
-    <section class="item" id="four"> 
+    <section class="item" id="four">
         <div>
             <h2>About the Project</h2>
         </div>
@@ -312,7 +317,8 @@
 <script src="assets/javascript/logic.js"></script>
 
 <!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async
+    defer></script>
 
 <!-- Scrollify JS Library -->
 <script src="jquery.scrollify.js"></script>
