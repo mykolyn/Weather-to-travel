@@ -472,22 +472,10 @@ input {
   }
 
 /*----------------weather table-----------*/
-.weather-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 2em;
-  min-width: 400px;
-}
+#trip-weather {
+    size: 4x;
+    color: blue;
+    margin-right: 50px;
+    float: left;
 
-.weather-table thead tr {
-  background-color: #5963AC;
-  color: white;
-  text-align: left;
-  font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-padding: 12px 15px;
-
-}
+  }
