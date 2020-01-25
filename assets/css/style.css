@@ -286,8 +286,8 @@ input {
 
 /* font awesome */
 .fas {
-  size: 4x;
-  color: blue;
+  font-size: 2em;
+  color: #f8c967;
   margin-right: 5px;
 }
 
