@@ -288,8 +288,8 @@ input {
 
 /* font awesome */
 .fas {
-  size: 4x;
-  color: blue;
+  font-size: 2em;
+  color: #f8c967;
   margin-right: 5px;
 }
 
@@ -452,24 +452,16 @@ input {
 
   }
 
-    /* ----------------scrollify------------------ */
+  /* ----------------scrollify------------------ */
 
   #one{
-    padding-top: 230px;
+    padding-top: 70px;
   }
   #two{
-    padding-top: 380px;
+    padding-top: 50px;
   }
   #three{
-    padding-top: 53px;
-  }
-  #four{
     padding-top: 70px;
   }
-  #five{
-    padding-top: 70px;
-  }
-  #six{
-    padding-top: 60px;
-  }
+
 

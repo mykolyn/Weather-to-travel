@@ -143,7 +143,7 @@
         </section> -->
 
         <!-- user input form - address/location -->
-        <section class="item" id="three">
+        <section class="item" id="two">
             <div id="userInput">
                 <form>
                     <div class="row">
@@ -153,8 +153,9 @@
                         </div>
                         <div class="col">
                             <p>Destination:</p>
-                            <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
-                                class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
+                            <input type="text" placeholder=" Disneyland" id="pointB"> 
+                            <button type="submit" id="submit" onclick="return saveComment();"
+                                class="btn btn-sm purple-gradient btn-rounded submit-round" >Route
                                 Me</button>
                         </div>
                     </div>
@@ -171,7 +172,7 @@
                         </div>
                         <div class="card-body dyn-height" id="directions">
                             <p class="font_awesome_sample">
-                                
+                                <i class="fas fa-route"></i>
                             </p>
                             <!-- <h5 class="card-title">turn left</h5>
                             <h5 class="card-title">turn right</h5>
@@ -184,6 +185,7 @@
                 <div class="col-sm-8">
                     <div id="map">Google Maps</div>
                 </div>
+                <div class="randomButton"><button id="checkWeatherArray">Get Weather</button></div>
             </div>
 
             <!-- weather forecast on route output - temperature/street or city -->
@@ -194,9 +196,8 @@
                     <th scope="col">Wind Speed</th>
                     <th scope="col">Humidity</th>
                     <th scope="col">Temperature</th>
-                    <!-- removed for now -->
-                    <!-- <th scope="col">Sunrise</th>
-                    <th scope="col">Sunset</th> -->
+                    <th scope="col">Sunrise</th>
+                    <th scope="col">Sunset</th>
                     <th scope="col">Sky Visibility</th>
                     <tbody></tbody>
                 </table>
@@ -211,7 +212,6 @@
         <div>
             <h2>About the Project</h2>
         </div>
-    </section>
 
     <!-- about the team -->
     <section class="mb-4 container item" id="five">
@@ -316,7 +316,6 @@
     <!--Section: Contact v.2-->
 
     <!-- footer - links to github accounts & linkedIn -->
-    <section class="item" id="six">
         <footer class="footer">
             <div class="footer__addr">
                 <h1 class="footer__logo">Weather to Travel</h1>
@@ -393,15 +392,19 @@
     </section>
 </body>
 
+
+
 <!-- javascript -->
 <script src="assets/javascript/javascript.js"></script>
+
+<script src="assets/javascript/logic.js"></script>
 
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async
     defer></script>
 
-<!-- Scrollify JS Library -->
-<script src="jquery.scrollify.js"></script>
+<!-- Scrollify JS Library 
+<script src="assets/javascript/jquery.scrollify.js"></script>
 <script>
     $(function () {
         $(".item").css({ "height": $(window).height() });
@@ -410,5 +413,5 @@
         });
     });
 </script>
-
+-->
 </html>

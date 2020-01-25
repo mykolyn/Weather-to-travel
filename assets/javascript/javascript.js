@@ -1,5 +1,4 @@
 
-
 // -------------------------code for video playing in background---------------
 function deferVideo() {
 
@@ -52,7 +51,7 @@ var startPoint;
 var endPoint;
 
 // array to hold coordinates to check weather for
-var convertedCoords = [];
+const convertedCoords = [];
 
 //--------------------------------------------------Styling the map--------------------------------------------------------------//
 //------------------------------------------------dont touch code below-------------------------------------------------------------  
@@ -339,31 +338,32 @@ function getGeocodeCity(coordinates) {
     method: "GET"
   })
     .then(function(response) {
-      // console.log("---------------geocode response-------------")
-      // console.log(response)
+      console.log("---------------geocode response-------------")
+      console.log(response)
       var geocodedCity = response.results[4].formatted_address
       console.log("City from Geocode: " + geocodedCity)
       convertedCoords.push(geocodedCity)
       console.log("Array of converted cities: " + convertedCoords)
-
+      console.log("Geocoded city from object: " + geocodedCity)
+      return convertedCoords;
     })
-
 }
 
 // example run of geocode API
-// getGeocodeCity("29.76043,-95.3698084");
-
+getGeocodeCity("29.76043,-95.3698084");
 
 //event listener for submit bttn
 $("#submit").on("click", function (event) {
   event.preventDefault();
   var coordsToCheck = [];
-  var convertedCoords = [];
+  // var convertedCoords = [];
   $("#directions").empty();
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
+
   console.log("Point B: " + endPoint)
+
 
   var styledMapType = new google.maps.StyledMapType(
     [
@@ -673,6 +673,7 @@ $("#submit").on("click", function (event) {
           var startLat = response.routes[0].legs[0].start_location.lat;
           var startLong = response.routes[0].legs[0].start_location.lng;
           var originCoords = startLat + "," + startLong;
+      
           
 
           if (distanceValue >= 80000) {
@@ -700,10 +701,141 @@ $("#submit").on("click", function (event) {
 
       getGeocodeCity(endCoords);
       console.log("coordsToCheck array: " + coordsToCheck)
+      
     })
+
+
+})
+  
+
+$("#submit").on("click", function() {
+async function delay(ms) {
+  // return await for better async stack trace support in case of errors.
+  return await new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function first(){
+  // console.log('first')
+  console.log("CITY NAMES ARE: " + convertedCoords)
+}
+function second(){
+  console.log('second')
+  // console.log("GIVE ME A MIRACLE " + convertedCoords)
+  // var array1 = ["this", "that", "something", "else", "another"]
+  // for (var i = 0; i < 5; i++) {
+    
+  //   console.log(array1[i])
+  // }
+
+ for (var i = 0; i < convertedCoords.length; i++) {
+   console.log("This loop should work. Please, GOD!!!")
+   var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
+
+     $.ajax({
+         url: queryURL,
+         method: "GET"
+     }).then(function (response) {
+        console.log("THIS SHOULD SHOW UP IN THE CONSOLE")
+        console.log(response)
+        console.log(response.city.name)
+        var sunrise = response.city.sunrise;
+        var sunset = response.city.sunset;
+        console.log("+++++++")
+        convertedMorning = timeConverter(sunrise)
+        console.log("+++++++")
+        convertedNight = timeConverter(sunset)
+        console.log("+++++++")
+        console.log("___________")
+        console.log("___________")
+        $(".table").append(
+        $("<tr>").append(
+        $("<td>").text(response.city.name),
+        console.log(response.list[1].wind),
+        $("<td>").text(response.list[1].wind.speed),
+        $("<td>").text(response.list[1].main.humidity),
+        $("<td>").text(response.list[1].main.temp),
+        $("<td>").text(convertedMorning),
+        $("<td>").text(convertedNight),
+        console.log(response.list[1].weather[0].description),
+        $("<td>").text(response.list[1].weather[0].description)
+
+             ))
+
+     })
+
+   }
+
+
+   
+    function timeConverter(a) {
+      let unix_timestamp = a
+      // Create a new JavaScript Date object based on the timestamp
+      // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+      var date = new Date(unix_timestamp * 1000);
+      // Hours part from the timestamp
+      var hours = date.getHours();
+      // Minutes part from the timestamp
+      var minutes = "0" + date.getMinutes();
+      // Seconds part from the timestamp
+      var seconds = "0" + date.getSeconds();
+  
+      // Will display time in 10:30:23 format
+      var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+  
+      console.log("this is the formatted time: ", formattedTime);
+      return formattedTime
+  }
+
+}
+let run = async ()=>{
+  await delay(2000);
+  first();
+  await delay(5000)
+  second();
+  
+
+}
+
+run();
+
+
+
 })
 
+// store location into localstorage
+document.getElementById("pointA").value = localStorage.getItem("start");
+document.getElementById("pointB").value = localStorage.getItem("destination");
 
+function saveComment() {
+  var start = document.getElementById("pointA").value;
+  var destination = document.getElementById("pointB").value;
+  localStorage.setItem("start", start);
+  localStorage.setItem("destination", destination);
+  return false;
+}
+
+let run = async ()=>{
+  await delay(2000);
+  first();
+  await delay(5000)
+  second();
+  
+
+}
+
+run();
+
+// store location into localstorage
+document.getElementById("pointA").value = localStorage.getItem("start");
+document.getElementById("pointB").value = localStorage.getItem("destination");
+
+function saveComment() {
+  var start = document.getElementById("pointA").value;
+  var destination = document.getElementById("pointB").value;
+  localStorage.setItem("start", start);
+  localStorage.setItem("destination", destination);
+  return false;
+}
 
 
 async function delay(ms) {
