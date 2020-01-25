@@ -705,6 +705,27 @@ $("#submit").on("click", function (event) {
 
 
 
+
+async function delay(ms) {
+  // return await for better async stack trace support in case of errors.
+  return await new Promise(resolve => setTimeout(resolve, ms));
+}
+//With this new delay function, you can implement your desired flow:
+
+function first(){
+  console.log('first')
+}
+function second(){
+  console.log('second')
+}
+let run = async ()=>{
+  await delay(2000);
+  first();
+  await delay(2000)
+  second();
+}
+run();
+
 //AJAX call to convert locations into coordinates
 
 // function to find location every 50 miles from starting point:

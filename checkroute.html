@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather to Travel</title>
+
+    <!-- Reset Css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet">
+    <!-- Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9163b5035.js" crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- nav bar - home/about me -->
+    <section class="navigation sticky">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#!">Logo</a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="index.html">Home</a></li>
+                        <li>                    <li>
+                        <a href="#!">Check Weather</a>
+                    </li>
+                    <li>
+                        <a href="#!">About</a>
+                    </li>
+                    <li>
+                        <a href="#!">Team</a>
+                    </li>
+
+                    <li>
+                        <a href="#!">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
+        <!-- user input form - address/location -->
+        <section class="item" id="three">
+            <div id="userInput">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <p>Start:</p>
+                            <input type="text" placeholder=" Apple HQ" id="pointA">
+                        </div>
+                        <div class="col">
+                            <p>Destination:</p>
+                            <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
+                                class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
+                                Me</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- map - route info -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fas fa-route"></i>   Route Info
+                        </div>
+                        <div class="card-body dyn-height" id="directions">
+                            <p class="font_awesome_sample">
+                                
+                            </p>
+                            <!-- <h5 class="card-title">turn left</h5>
+                            <h5 class="card-title">turn right</h5>
+                             <h5 class="card-title">go straight</h5>
+
+                            <p  class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius alias maxime, dolor voluptas atque facere ducimus adipisci ab magnam pariatur. Sit delectus esse veniam sed quidem accusantium aperiam atque dolorum!</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div id="map">Google Maps</div>
+                </div>
+            </div>
+
+            <!-- weather forecast on route output - temperature/street or city -->
+            <div id="weather">
+                <table class="table">
+                    <th scope="col"> </th>
+                    <th scope="col">City</th>
+                    <th scope="col">Wind Speed</th>
+                    <th scope="col">Humidity</th>
+                    <th scope="col">Temperature</th>
+                    <!-- removed for now -->
+                    <!-- <th scope="col">Sunrise</th>
+                    <th scope="col">Sunset</th> -->
+                    <th scope="col">Sky Visibility</th>
+                    <tbody></tbody>
+                </table>
+            </div>
+    </div>
+    </section>
+    <!-- end of container -->
+    </div>
+
+
+
+  
+ 
+
+    <!-- footer - links to github accounts & linkedIn -->
+    <section class="item" id="six">
+        <footer class="footer">
+            <div class="footer__addr">
+                <h1 class="footer__logo">Weather to Travel</h1>
+
+                <h2>Contact</h2>
+
+                <address>
+                    5534 Somewhere In. The World 22193-10212<br>
+
+                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+                </address>
+            </div>
+
+            <ul class="footer__nav">
+                <li class="nav__item">
+                    <h2 class="nav__title">Libraries/Frameworks</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="#">jQuery</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Scrollify</a>
+                        </li>
+
+                        <li>
+                            <a href="#">BootStrap</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item nav__item--extra">
+                    <h2 class="nav__title">APIs</h2>
+
+                    <ul class="nav__ul nav__ul--extra">
+                        <li>
+                            <a href="#">Google Maps</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Weather</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Geocode</a>
+                        </li>
+                        <li>
+                            <a href="#">filler</a>
+                        </li>
+                </li>
+            </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Legal</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Sitemap</a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </footer>
+    </section>
+</body>
+
+<!-- javascript -->
+<script src="assets/javascript/javascript.js"></script>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async
+    defer></script>
+
+
+
+</html>
