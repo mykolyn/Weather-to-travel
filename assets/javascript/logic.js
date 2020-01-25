@@ -1,7 +1,7 @@
 $(document).on("click", "#submit", function () {
-           
+
     var input = $("#pointA").val();
-   
+
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
 
     $.ajax({
@@ -11,41 +11,32 @@ $(document).on("click", "#submit", function () {
         console.log("THIS SHOULD SHOW UP IN THE CONSOLE")
         console.log(response)
         console.log(response.city.name)
-        
         var sunrise = response.city.sunrise;
         var sunset = response.city.sunset;
         console.log("+++++++")
-        convertedMorning=timeConverter(sunrise)
+        convertedMorning = timeConverter(sunrise)
         console.log("+++++++")
-        convertedNight=timeConverter(sunset)
+        convertedNight = timeConverter(sunset)
         console.log("+++++++")
-      
         console.log("___________")
-        // console.log(fmtTime)
         console.log("___________")
         $(".table").append(
-            $("<tr>").append(
-                $("<td>").text(response.city.name),
-                console.log(response.list[1].wind),
-                $("<td>").text(response.list[1].wind.speed),
-                $("<td>").text(response.list[1].main.humidity),
-                $("<td>").text(response.list[1].main.temp),
-                $("<td>").text(convertedMorning),
-                $("<td>").text(convertedNight),
-                console.log(response.list[1].weather[0].description),
-                $("<td>").text(response.list[1].weather[0].description)
+        $("<tr>").append(
+        $("<td>").text(response.city.name),
+        console.log(response.list[1].wind),
+        $("<td>").text(response.list[1].wind.speed),
+        $("<td>").text(response.list[1].main.humidity),
+        $("<td>").text(response.list[1].main.temp),
+        $("<td>").text(convertedMorning),
+        $("<td>").text(convertedNight),
+        console.log(response.list[1].weather[0].description),
+        $("<td>").text(response.list[1].weather[0].description)
 
-                
-
-
-
-                // var city = $("<td>").text(response.city.name);
             ))
-        
-    })
 
+    })
     var input1 = $("#pointB").val();
-   
+
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input1 + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
 
     $.ajax({
@@ -55,43 +46,32 @@ $(document).on("click", "#submit", function () {
         console.log("THIS SHOULD SHOW UP IN THE CONSOLE")
         console.log(response)
         console.log(response.city.name)
-        
         var sunrise = response.city.sunrise;
         var sunset = response.city.sunset;
         console.log("+++++++")
-        convertedMorning=timeConverter(sunrise)
+        convertedMorning = timeConverter(sunrise)
         console.log("+++++++")
-        convertedNight=timeConverter(sunset)
+        convertedNight = timeConverter(sunset)
         console.log("+++++++")
-      
         console.log("___________")
-        // console.log(fmtTime)
         console.log("___________")
         $(".table").append(
-            $("<tr>").append(
-                $("<td>").text(response.city.name),
-                console.log(response.list[1].wind),
-                $("<td>").text(response.list[1].wind.speed),
-                $("<td>").text(response.list[1].main.humidity),
-                $("<td>").text(response.list[1].main.temp),
-                $("<td>").text(convertedMorning),
-                $("<td>").text(convertedNight),
-                console.log(response.list[1].weather[0].description),
-                $("<td>").text(response.list[1].weather[0].description)
-
-                
-
-
-
-                // var city = $("<td>").text(response.city.name);
+        $("<tr>").append(
+        $("<td>").text(response.city.name),
+        console.log(response.list[1].wind),
+        $("<td>").text(response.list[1].wind.speed),
+        $("<td>").text(response.list[1].main.humidity),
+        $("<td>").text(response.list[1].main.temp),
+        $("<td>").text(convertedMorning),
+        $("<td>").text(convertedNight),
+        console.log(response.list[1].weather[0].description),
+        $("<td>").text(response.list[1].weather[0].description)
             ))
-        
-    }) // ))})
+
+    })
 })
 
-
-
-function timeConverter(a){
+function timeConverter(a) {
     let unix_timestamp = a
     // Create a new JavaScript Date object based on the timestamp
     // multiplied by 1000 so that the argument is in milliseconds, not seconds.
