@@ -65,7 +65,7 @@ p {
 }
 
 .nav-container {
-  max-width: 1000px;
+  max-width: 3000px;
   margin: 0 auto;
 }
 
@@ -206,7 +206,9 @@ article {
 }
 
 
-
+#one {
+  padding: 0px;
+}
 
 
 /* -----------------------input form------------------------- */
