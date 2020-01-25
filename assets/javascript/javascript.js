@@ -24,7 +24,8 @@ window.onload = deferVideo;
 var startPoint;
 var endPoint;
 
-
+// array to hold coordinates to check weather for
+var convertedCoords = [];
 
 
 // Put USA map on screen onload:
@@ -38,12 +39,36 @@ $(document).ready(function () {
 
 
 
+// Google Geocoding API to convert coordinates to address/city:
+function getGeocodeCity(coordinates) {
 
+  var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +coordinates+ "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
+  $.ajax({
+    url: geocodeURL,
+    method: "GET"
+  })
+    .then(function(response) {
+      // console.log("---------------geocode response-------------")
+      // console.log(response)
+      var geocodedCity = response.results[4].formatted_address
+      console.log("City from Geocode: " + geocodedCity)
+      convertedCoords.push(geocodedCity)
+      console.log("Array of converted cities: " + convertedCoords)
+
+    })
+
+}
+
+// example run of geocode API
+// getGeocodeCity("29.76043,-95.3698084");
 
 //AJAX call to map api
 
 $("#submit").on("click", function (event) {
   event.preventDefault();
+  var coordsToCheck = [];
+  var convertedCoords = [];
+  $("#directions").empty();
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
   console.log("Point A: " + startPoint);
@@ -87,17 +112,52 @@ $("#submit").on("click", function (event) {
         }
         else{
           console.log(response.routes[0].legs[0].steps[0].html_instructions)
+<<<<<<< HEAD
           var distanceValue = 0;
+=======
+          var distanceValue;
+>>>>>>> 81eba637fbe8d22eb318ea433f0cbe2943908400
         for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
           var steps = $("<h6>");
           steps.addClass("card-title");
           steps.html(response.routes[0].legs[0].steps[i].html_instructions);
           $("#directions").append(steps);
-          distanceValue = distanceValue + response.routes[0].legs[0].steps[i].distance.value;
-          console.log(distanceValue); 
+          distanceValue = response.routes[0].legs[0].steps[i].distance.value;
+          // console.log(response.routes[0].legs[0].steps[i].distance); 
           // distanceValue will be used to determine locations for which to check weather
+          var startLat = response.routes[0].legs[0].start_location.lat;
+          var startLong = response.routes[0].legs[0].start_location.lng;
+          var originCoords = startLat + "," + startLong;
+          
+
+          if (distanceValue >= 80000) {
+            var lat = response.routes[0].legs[0].steps[i].end_location.lat;
+            var lng = response.routes[0].legs[0].steps[i].end_location.lng;
+            var latLong = lat + "," + lng;
+            coordsToCheck.push(latLong)
+            // return(coordsToCheck)
+          }
+
+          var endLat = response.routes[0].legs[0].end_location.lat;
+          var endLong = response.routes[0].legs[0].end_location.lng;
+          var endCoords = endLat + "," + endLong;
+          
         }
       }
+<<<<<<< HEAD
+=======
+      console.log("Origin: " + originCoords)
+      console.log("Destination: " + endCoords)
+
+      getGeocodeCity(originCoords);
+      
+      for (var i = 0; i < coordsToCheck.length; i++) {
+        getGeocodeCity(coordsToCheck[i])
+      }
+
+      getGeocodeCity(endCoords);
+      console.log("coordsToCheck array: " + coordsToCheck)
+>>>>>>> 81eba637fbe8d22eb318ea433f0cbe2943908400
     })
 })
 
