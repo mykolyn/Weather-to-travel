@@ -90,10 +90,8 @@
 
                 </div>
             </div>
-        </section>
 
         <!-- about me -->
-        <section class="item" id="two">
             <div class="aboutme" id="aboutMe">
 
                 <div class="d-flex">
@@ -147,7 +145,7 @@
         </section>
 
         <!-- user input form - address/location -->
-        <section class="item" id="three">
+        <section class="item" id="two">
             <div id="userInput">
                 <form>
                     <div class="row">
@@ -157,8 +155,9 @@
                         </div>
                         <div class="col">
                             <p>Destination:</p>
-                            <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
-                                class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
+                            <input type="text" placeholder=" Disneyland" id="pointB"> 
+                            <button type="submit" id="submit" onclick="return saveComment();"
+                                class="btn btn-sm purple-gradient btn-rounded submit-round" >Route
                                 Me</button>
                         </div>
                     </div>
@@ -210,21 +209,17 @@
     </div>
 
     <!-- about the project -->
-    <section class="item" id="four">
+    <section class="item" id="three"> 
         <div>
             <h2>About the Project</h2>
         </div>
-    </section>
 
     <!-- about the team -->
-    <section class="item" id="five">
         <div>
             <h2>About the Team</h2>
         </div>
-    </section>
 
     <!-- footer - links to github accounts & linkedIn -->
-    <section class="item" id="six">
         <footer class="footer">
             <div class="footer__addr">
                 <h1 class="footer__logo">Weather to Travel</h1>
@@ -319,8 +314,8 @@
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async defer></script>
 
-<!-- Scrollify JS Library
-<script src="jquery.scrollify.js"></script>
+<!-- Scrollify JS Library 
+<script src="assets/javascript/jquery.scrollify.js"></script>
 <script>
     $(function () {
         $(".item").css({ "height": $(window).height() });
@@ -329,6 +324,5 @@
         });
     });
 </script>
- -->
-
+-->
 </html>
