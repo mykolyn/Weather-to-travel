@@ -20,7 +20,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
     <!-- Css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d9163b5035.js" crossorigin="anonymous"></script>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -35,23 +36,37 @@
 
 <body>
     <!-- nav bar - home/about me -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top navbar-custom">
-        <a class="navbar-brand" href="#"> <img src="assets/icons/logo.svg" width="30" height="30"
-                class="d-inline-block align-top" alt="">Weather to Travel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-
-                <a href="#" class="btn btn-outline-success" role="button" aria-pressed="true" id="homeButton">Home</a>
-                <a href="#" class="btn btn-outline-success" role="button" aria-pressed="true" id="aboutButton">About</a>
-
-            </div>
+    <section class="navigation sticky">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!">Logo</a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="#!">Home</a>
+              </li>
+              <li>
+                <a href="#!">About</a>
+              </li>
+              <li>
+                <a href="#!">Team</a>
+              </li>
+             
+              <li>
+                <a href="#!">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </nav>
-
+      </section>
+      
+      <!-- <article>
+        <h2>Navigation</h2>
+        <p>Responsive Dropdown Navigation Bar.</p>
+        <p>Want to see how it's made? <a href="http://www.taniarascia.com/responsive-dropdown-navigation-bar/">Read the tutorial!</a></p>
+      </article> -->
     <!-- container div -->
     <div class="container ">
 
@@ -156,9 +171,12 @@
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-header">
-                            Route Info
+                            <i class="fas fa-route"></i>   Route Info
                         </div>
-                        <div class="card-body" id="directions">
+                        <div class="card-body dyn-height" id="directions">
+                            <p class="font_awesome_sample">
+                                <i class="fas fa-route"></i>
+                            </p>
                             <!-- <h5 class="card-title">turn left</h5>
                             <h5 class="card-title">turn right</h5>
                              <h5 class="card-title">go straight</h5>
@@ -180,9 +198,8 @@
                     <th scope="col">Wind Speed</th>
                     <th scope="col">Humidity</th>
                     <th scope="col">Temperature</th>
-                    <!-- removed for now -->
-                    <!-- <th scope="col">Sunrise</th>
-                    <th scope="col">Sunset</th> -->
+                    <th scope="col">Sunrise</th>
+                    <th scope="col">Sunset</th>
                     <th scope="col">Sky Visibility</th>
                     <tbody></tbody>
                 </table>
@@ -292,13 +309,17 @@
     </section>
 </body>
 
+
+
 <!-- javascript -->
 <script src="assets/javascript/javascript.js"></script>
 
-<!-- Google Maps API
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async defer></script> -->
+<script src="assets/javascript/logic.js"></script>
 
-<!-- Scrollify JS Library -->
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async defer></script>
+
+<!-- Scrollify JS Library
 <script src="jquery.scrollify.js"></script>
 <script>
     $(function () {
@@ -308,5 +329,6 @@
         });
     });
 </script>
+ -->
 
 </html>
