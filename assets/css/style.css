@@ -447,6 +447,10 @@ input {
   .table {
     color: #664BF3;
     font-weight: bold;
+    font-family: 'helvetica';
+    font-weight: 400;
+    /* text-transform: lowercase; */
+    font-size: 1.5rem;
 
   }
 
@@ -472,10 +476,3 @@ input {
   }
 
 /*----------------weather table-----------*/
-#trip-weather {
-    size: 4x;
-    color: blue;
-    margin-right: 50px;
-    float: left;
-
-  }
