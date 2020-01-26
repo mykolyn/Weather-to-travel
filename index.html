@@ -27,6 +27,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap"
+        async defer></script>
+
+
 </head>
 
 <body>
@@ -40,17 +45,19 @@
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                 <ul class="nav-list">
                     <li>
-                        <a href="#!">Home</a>
+                        <a href="index.html">Home</a></li>
+                    <li>
+                        <a href="checkroute.html">Check Weather</a>
                     </li>
                     <li>
-                        <a href="#!">About</a>
+                        <a href="#four">About</a>
                     </li>
                     <li>
-                        <a href="#!">Team</a>
+                        <a href="#two">Team</a>
                     </li>
 
                     <li>
-                        <a href="#!">Contact</a>
+                        <a href="#five">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -62,130 +69,208 @@
         <p>Responsive Dropdown Navigation Bar.</p>
         <p>Want to see how it's made? <a href="http://www.taniarascia.com/responsive-dropdown-navigation-bar/">Read the tutorial!</a></p>
       </article> -->
+    <section class="item" id="one">
+        <div class="jumbotron jumbotron-fluid">
+
+            <video autoplay muted loop poster="https://dummyimage.com/900x400/000/fff">
+                <source src="" data-src="assets/media/roadtrip.mp4" type="video/mp4">
+                <!-- <source src="" data-src="//clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm">
+                <source src="" data-src="//clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg"> -->
+            </video>
+
+            <div class="container text-white">
+
+                <h1 class="display-4 header">Weather to Travel</h1>
+                <p class="lead header-text">Made for explorers, by explorers</p>
+                <hr class="my-4">
+                <p class="header-text">For the outdoor enthusiasts that plan for an adventure, rather than a trip</p>
+                <a class="btn btn-primary btn-sm header-bttn" href="checkroute.html" role="button">Get Started</a>
+
+            </div>
+        </div>
+        <div class="container aboutme" id="aboutMe">
+
+            <div class="d-flex">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="assets/icons/icons8-hand-with-pen-100.png" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Plan your trip</h5>
+                                <p class="card-text">
+                                    From backpacking to road trips, our app gives users the chance to finally stem away from the unpredictable weather around every turn.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="assets/icons/icons8-waypoint-map-100.png" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Set your route</h5>
+                                <p class="card-text">
+                                    Encouraging more people to get back to their roots and and experience nature whether it’s in a city or the side of a road.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="assets/icons/icons8-sun-100.png" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Get weather forecast</h5>
+                                <p class="card-text">
+                                    Being able to guarantee you will have all the information you need for a worry-free journey.
+                                    
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- container div -->
     <div class="container ">
 
-        <!-- jumbotron - background pic/logo/welcome -->
-        <section class="item" id="one">
-            <div class="jumbotron jumbotron-fluid">
 
-                <video autoplay muted loop poster="https://dummyimage.com/900x400/000/fff">
-                    <source src="" data-src="assets/media/roadtrip.mp4" type="video/mp4">
-                    <!-- <source src="" data-src="//clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm">
-                    <source src="" data-src="//clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg"> -->
-                </video>
-
-                <div class="container text-white">
-
-                    <h1 class="display-4 header">Weather to Travel</h1>
-                    <p class="lead header-text">Plan your roadtrip with us cause we're cool and nice people</p>
-                    <hr class="my-4">
-                    <p class="header-text">We make roadtrips great again</p>
-                    <a class="btn btn-primary btn-sm header-bttn" href="#" role="button">Learn more</a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- about me -->
+        <!-- About the team-->
         <section class="item" id="two">
-            <div class="aboutme" id="aboutMe">
+            <!-- Section: Team v.1 -->
+            <section class="team-section text-center my-5">
 
-                <div class="d-flex">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="assets/icons/icons8-hand-with-pen-100.png" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Plan your trip</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
+                <!-- Section heading -->
+                <h2 class="h1-responsive font-weight-bold my-5">Our Amazing Team</h2>
+                <!-- Section description -->
+                <p class="grey-text w-responsive mx-auto mb-5">
+                    After many trips individually,
+                     our developers came together and decided it's time for people alike to have the tools in hand to know the weather along one's entire route. 
+                     Instead of using multiple windows or several apps to access the weather, 
+                     directions, and major cities along the way; now you can find out all of that information with the click of a button. 
+                     Integrating GoogleMaps and an OpenWeather API,
+                      we give you the ability to have all the information you need in the palm of your hand, anywhere in the world. </p>
 
-                                </div>
-                            </div>
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg"
+                                class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+                        <p class="text-uppercase blue-text"><strong>Graphic designer</strong></p>
+                        <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur,
+                            adipisci sed quia non numquam modi tempora eius.</p>
+                        <ul class="list-unstyled mb-0">
+                            <!-- Facebook -->
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fab fa-facebook-f blue-text"> </i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="p-2 fa-lg tw-ic">
+                                <i class="fab fa-twitter blue-text"> </i>
+                            </a>
+                            <!-- Instagram -->
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fab fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
                     </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="assets/icons/icons8-waypoint-map-100.png" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Set your route</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
+                    <!-- Grid column -->
 
-                                </div>
-                            </div>
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg"
+                                class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
+                        <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
+                        <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa
+                            accusantium
+                            doloremque rem laudantium totam aperiam.</p>
+                        <ul class="list-unstyled mb-0">
+                            <!-- Facebook -->
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fab fa-facebook-f blue-text"> </i>
+                            </a>
+                            <!-- Instagram -->
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fab fa-instagram blue-text"> </i>
+                            </a>
+                        </ul>
                     </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="assets/icons/icons8-sun-100.png" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Get weather forecast</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
+                    <!-- Grid column -->
 
-                                </div>
-                            </div>
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                                class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
+                        <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
+                        <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt
+                            mollit anim est fugiat nulla id eu laborum.</p>
+                        <ul class="list-unstyled mb-0">
+                            <!-- Facebook -->
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fab fa-facebook-f blue-text"> </i>
+                            </a>
+                            <!-- Instagram -->
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fab fa-instagram blue-text"> </i>
+                            </a>
+                            <!-- Dribbble -->
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fab fa-dribbble blue-text"> </i>
+                            </a>
+                        </ul>
                     </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                                class="rounded-circle z-depth-1" alt="Sample avatar">
+                        </div>
+                        <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
+                        <p class="text-uppercase blue-text"><strong>Backend developer</strong></p>
+                        <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui
+                            consectetur
+                            totam officia voluptates perferendis voluptatibus aut.</p>
+                        <ul class="list-unstyled mb-0">
+                            <!-- Facebook -->
+                            <a class="p-2 fa-lg fb-ic">
+                                <i class="fab fa-facebook-f blue-text"> </i>
+                            </a>
+                            <!-- Github -->
+                            <a class="p-2 fa-lg ins-ic">
+                                <i class="fab fa-github blue-text"> </i>
+                            </a>
+                        </ul>
+                    </div>
+                    <!-- Grid column -->
+
                 </div>
-            </div>
-        </section>
-
-        <!-- user input form - address/location -->
-        <section class="item" id="three">
-            <div id="userInput">
-                <form>
-                    <div class="row">
-                        <div class="col">
-                            <p>Start:</p>
-                            <input type="text" placeholder=" Apple HQ" id="pointA">
-                        </div>
-                        <div class="col">
-                            <p>Destination:</p>
-                            <input type="text" placeholder=" Disneyland" id="pointB"> <button type="submit"
-                                class="btn btn-sm purple-gradient btn-rounded submit-round" id="submit">Route
-                                Me</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-            <!-- map - route info -->
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fas fa-route"></i> Route Info
-                        </div>
-                        <div class="card-body dyn-height" id="directions">
-                            <p class="font_awesome_sample">
-
-                                <i class="fas fa-route"></i>
-                            </p>
-                            <!-- <h5 class="card-title">turn left</h5>
-                            <h5 class="card-title">turn right</h5>
-                             <h5 class="card-title">go straight</h5>
-
-                            <p  class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius alias maxime, dolor voluptas atque facere ducimus adipisci ab magnam pariatur. Sit delectus esse veniam sed quidem accusantium aperiam atque dolorum!</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div id="map">Google Maps</div>
-                </div>
-                <div class="randomButton"><button id="checkWeatherArray">Get Weather</button></div>
-            </div>
 
             <!-- weather forecast on route output - temperature/street or city -->
 
@@ -204,6 +289,9 @@
     </div>
     </section>
     <!-- end of container -->
+
+
+                <!-- end of container -->
     </div>
 
     <!-- about the project -->
@@ -212,98 +300,239 @@
             <h2>About the Project</h2>
         </div>
     </section>
+        <div class="container pt-5 my-5 z-depth-1">
+            <section class="p-md-3 mx-md-5">
+              <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-6 mb-4">
+                  <h2 class="font-weight-bold mb-3">Features</h2>
+                  <p class="text-muted pt-3">
+                    Nobody ever plans for the unexpected and yet the unexpected still happens. 
+                    Anything from rain, hail, sleet, snow, hurricane-level winds, and floods can cross someone's path while they’re going from point A to point B. 
+                    Weather-to-Travel eliminates the “unexpected” completely and gives the user full comfort on their journey 
+                    and the opportunity to adjust their plans based on the information provided.
+                  </p>
+                </div>
+                <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-md-0 mb-5">
+                    <h4 class="font-weight-bold mb-3">  
+                      <i class="fa fa-layer-group indigo-text fa-10x"></i>
+                    </h4>
+                </div>
+              </div>
+              <div class="row pt-3">
+                <div class="col-lg-3 col-md-6 mb-5">
+                  <h4 class="font-weight-bold mb-3"> 
+                    <i class="far fa-paper-plane indigo-text pr-2"></i> Feature 1
+                  </h4>
+                  <p class="text-muted mb-lg-0">
+                    Giving our users the ability to get the current weather in cities every 50 miles along their route. 
+                  </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                  <h4 class="font-weight-bold mb-3">
+                    <i class="fas fa-pen-alt green-text pr-2"></i> Feature 2
+                  </h4>
+                  <p class="text-muted mb-lg-0">
+                    Consists of applied research and is used by its very own developers on a near daily basis. We don’t have time for bugs here.
+                  </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                  <h4 class="font-weight-bold mb-3">
+                    <i class="fas fa-user amber-text pr-2"></i> Feature 3
+                  </h4>
+                  <p class="text-muted mb-md-0">
+                    Our app is a collaboration from personal experience for explorers, by explorers, and everyone in between.
+                  </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                  <h4 class="font-weight-bold mb-3">
+                    <i class="fas fa-rocket red-text pr-2"></i> Feature 4
+                  </h4>
+                  <p class="text-muted mb-md-0">
+                    Now you can safely say you have the weather to travel.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
 
-    <!-- about the team -->
-    <section class="item" id="five">
-        <div>
-            <h2>About the Team</h2>
-        </div>
-    </section>
+        <!-- contact page -->
+        <section class="mb-4 item" id="five">
+            <div class="container card">
+        
 
-    <!-- footer - links to github accounts & linkedIn -->
-    <section class="item" id="six">
-        <footer class="footer">
-            <div class="footer__addr">
-                <h1 class="footer__logo">Weather to Travel</h1>
+                <!--Section heading-->
+                <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+                <!--Section description-->
+                <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
+                    contact us
+                    directly. Our team will come back to you within
+                    a matter of hours to help you.</p>
 
-                <h2>Contact</h2>
+                <div class="row">
 
-                <address>
-                    5534 Somewhere In. The World 22193-10212<br>
+                    <!--Grid column-->
+                    <div class="col-md-9 mb-md-0 mb-5">
+                        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
-                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-                </address>
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name" name="name" class="form-control">
+                                        <label for="name" class="">Your name</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="email" name="email" class="form-control">
+                                        <label for="email" class="">Your email</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="subject" name="subject" class="form-control">
+                                        <label for="subject" class="">Subject</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-md-12">
+
+                                    <div class="md-form">
+                                        <textarea type="text" id="message" name="message" rows="2"
+                                            class="form-control md-textarea"></textarea>
+                                        <label for="message">Your message</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                        </form>
+
+                        <div class="text-center text-md-left">
+                            <a class="btn btn-primary">Send</a>
+                        </div>
+                        <div class="status"></div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 text-center">
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                <p>San Francisco, CA 94126, USA</p>
+                            </li>
+
+                            <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                                <p>+ 01 234 567 89</p>
+                            </li>
+
+                            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                <p>contact@mdbootstrap.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
             </div>
 
-            <ul class="footer__nav">
+            <footer class="footer">
+                <div class="footer__addr">
+                    <h1 class="footer__logo">Weather to Travel</h1>
+
+                    <h2>Contact</h2>
+
+                    <address>
+                        5534 Somewhere In. The World 22193-10212<br>
+
+                        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+                    </address>
+                </div>
+
+                <ul class="footer__nav">
+                    <li class="nav__item">
+                        <h2 class="nav__title">Libraries/Frameworks</h2>
+
+                        <ul class="nav__ul">
+                            <li>
+                                <a href="#">jQuery</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Scrollify</a>
+                            </li>
+
+                            <li>
+                                <a href="#">BootStrap</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__item nav__item--extra">
+                        <h2 class="nav__title">APIs</h2>
+
+                        <ul class="nav__ul nav__ul--extra">
+                            <li>
+                                <a href="#">Google Maps</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Weather</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Geocode</a>
+                            </li>
+                            <li>
+                                <a href="#">filler</a>
+                            </li>
+                    </li>
+                </ul>
+                </li>
+
                 <li class="nav__item">
-                    <h2 class="nav__title">Libraries/Frameworks</h2>
+                    <h2 class="nav__title">Legal</h2>
 
                     <ul class="nav__ul">
                         <li>
-                            <a href="#">jQuery</a>
+                            <a href="#">Privacy Policy</a>
                         </li>
 
                         <li>
-                            <a href="#">Scrollify</a>
+                            <a href="#">Terms of Use</a>
                         </li>
 
                         <li>
-                            <a href="#">BootStrap</a>
+                            <a href="#">Sitemap</a>
                         </li>
                     </ul>
                 </li>
-
-                <li class="nav__item nav__item--extra">
-                    <h2 class="nav__title">APIs</h2>
-
-                    <ul class="nav__ul nav__ul--extra">
-                        <li>
-                            <a href="#">Google Maps</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Weather</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Geocode</a>
-                        </li>
-                        <li>
-                            <a href="#">filler</a>
-                        </li>
-                </li>
-            </ul>
-            </li>
-
-            <li class="nav__item">
-                <h2 class="nav__title">Legal</h2>
-
-                <ul class="nav__ul">
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Terms of Use</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Sitemap</a>
-                    </li>
                 </ul>
-            </li>
-            </ul>
+            </footer>
+        </section>
 
-            <div class="legal">
-                <p>&copy; 2020 Coolkids. All rights reserved.</p>
 
-                <div class="legal__links">
-                    <span>Made with sticks and stones, dont hack us pls</span>
-                </div>
-            </div>
-        </footer>
-    </section>
+
 </body>
 
 
@@ -319,6 +548,8 @@
 
 <!-- Scrollify JS Library
 <script src="jquery.scrollify.js"></script>
+<!-- Scrollify JS Library  -->
+<script src="assets/javascript/jquery.scrollify.js"></script>
 <script>
     $(function () {
         $(".item").css({ "height": $(window).height() });
