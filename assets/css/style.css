@@ -259,9 +259,14 @@ article {
 
 /* font awesome */
 .fas {
-  font-size: 2em;
-  color: #f8c967;
+  font-size: 1.75em;
+  /* color: #F53B33; */
+  /* color: #FF383E; */
+  color: #E74647;
   margin-right: 5px;
+}
+.card-header span {
+  font-size: 1.75em;
 }
 
 
