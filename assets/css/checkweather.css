@@ -63,7 +63,7 @@ input[type=text] {
     position:relative;
   }
   #weather {
-    height:290px;
+    height:309px;
     overflow:auto;  
     margin-top:20px;
   }
