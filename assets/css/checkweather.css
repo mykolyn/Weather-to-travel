@@ -1,0 +1,92 @@
+h6 {
+    border-top:1px solid #cccccc; 
+
+    padding: 5px;
+  }
+
+  #p-input {
+      padding: 0px;
+      margin: 6px 0px 1px 0px; 
+      color: indigo;
+  }
+
+  /* -----------------------input form------------------------- */
+
+input {
+    width: 95%;
+}
+
+input[type=text] {
+    width: 250px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 100%;
+  }
+
+/* 
+#userInput {
+  background-color: #5963AC;
+    border-radius: 25px;
+    padding: 20px;
+} */
+
+.submit-round {
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.card-input{
+  margin: 20px;
+}
+/* -------------------end of input form--------------------- */
+
+.buffer {
+    margin: 5%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+
+/* scroll bar */
+/* http://jsfiddle.net/q4CqZ/6/ */
+.dyn-height {
+    width:100%;
+    max-height:525px;
+    overflow-y:auto;
+  }
+
+  #table-wrapper {
+    position:relative;
+  }
+  #weather {
+    height:290px;
+    overflow:auto;  
+    margin-top:20px;
+  }
+  #table-wrapper table {
+    width:100%;
+      
+  }
+  #table-wrapper table * {
+    color:black;
+  }
+  #table-wrapper table thead th .text {
+    position:absolute;   
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+  }
+
+
+
+
+
+
+
+  
