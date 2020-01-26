@@ -363,8 +363,10 @@ function getGeocodeCity(coordinates) {
     method: "GET"
   })
     .then(function (response) {
-      var geocodedCity = response.results[4].formatted_address
-      convertedCoords.push(geocodedCity)
+      console.log(response)
+      var geocodedCity = response.results[(response.results.length) - 4].formatted_address
+      console.log(geocodedCity)
+      convertedCoords.splice(1, 0, geocodedCity)
       console.log("Array of converted cities: " + convertedCoords)
       return convertedCoords;
     })
@@ -761,9 +763,9 @@ $("#submit").on("click", function () {
     return await new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  function first() {
-    console.log("CITY NAMES ARE: " + convertedCoords)
-  }
+  // function first() {
+  //   console.log("CITY NAMES ARE: " + convertedCoords)
+  // }
   function second() {
     // console.log('second')
 
@@ -828,11 +830,11 @@ $("#submit").on("click", function () {
 
   }
   let run = async () => {
-    await delay(2000);
-    first();
+    // await delay(1000);
+    // first();
     // getGeocodeCity(endCoords);
 
-    await delay(1000)
+    await delay(2000)
     second();
   }
 
