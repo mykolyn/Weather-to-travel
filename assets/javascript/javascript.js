@@ -53,17 +53,17 @@ var endPoint;
 //-------------------------------------------------------------------------------
 
 // map functions
-function initMap() {
-  var directionsService = new google.maps.DirectionsService();
-  var directionsRenderer = new google.maps.DirectionsRenderer();
-  var mapOptions = {
-    zoom: 4,
-    center: { lat: 38, lng: -96 }
-  }
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  directionsRenderer.setMap(map);
-  directionsRenderer.setPanel(document.getElementById('directions'));
-}
+// function initMap() {
+//   var directionsService = new google.maps.DirectionsService();
+//   var directionsRenderer = new google.maps.DirectionsRenderer();
+//   var mapOptions = {
+//     zoom: 5,
+//     center: { lat: 38, lng: -96 }
+//   }
+//   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+//   directionsRenderer.setMap(map);
+//   directionsRenderer.setPanel(document.getElementById('directions'));
+// }
 
 function calcRoute() {
   var request = {
@@ -78,7 +78,7 @@ function calcRoute() {
   });
 }
 // array to hold coordinates to check weather for
-const convertedCoords = [];
+var convertedCoords = [];
 
 //--------------------------------------------------Styling the map--------------------------------------------------------------//
 //------------------------------------------------dont touch code below-------------------------------------------------------------  
@@ -344,9 +344,8 @@ function initMap() {
   // Create a map object, and include the MapTypeId to add
   // to the map type control.
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 38, lng: -96 },
-    zoom: 4.1,
-
+    center: { lat: 38.5, lng: -96 },
+    zoom: 4.3,
   });
 
   //Associate the styled map with the MapTypeId and set it to display.
@@ -358,21 +357,24 @@ function initMap() {
 // ---------------------------------------------------------------------------------------------------------
 // Google Geocoding API to convert coordinates to address/city:
 function getGeocodeCity(coordinates) {
-
-
   var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coordinates + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
   $.ajax({
     url: geocodeURL,
     method: "GET"
   })
     .then(function (response) {
-      var geocodedCity = response.results[4].formatted_address
-      convertedCoords.push(geocodedCity)
+      console.log(response)
+      var geocodedCity = response.results[(response.results.length) - 4].formatted_address
+      console.log(geocodedCity)
+      convertedCoords.splice(1, 0, geocodedCity)
       console.log("Array of converted cities: " + convertedCoords)
       return convertedCoords;
     })
 }
 
+// Test run of above function
+// var sampleCoords = "30.66, -88.20"
+// getGeocodeCity(sampleCoords)
 
 //event listener for submit bttn
 $("#submit").on("click", function (event) {
@@ -382,6 +384,10 @@ $("#submit").on("click", function (event) {
   $("#directions").empty();
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
+  console.log("Going from " + startPoint + " to " + endPoint);
+
+  convertedCoords.push(startPoint)
+  convertedCoords.push(endPoint)
 
   var styledMapType = new google.maps.StyledMapType(
     [
@@ -648,6 +654,23 @@ $("#submit").on("click", function (event) {
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
 
+  directionsRenderer.setPanel(document.getElementById('directions'));
+
+  function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+    // var start = document.getElementById('pointA').value;
+    // var end = document.getElementById('pointB').value;
+    directionsService.route({
+      origin: startPoint,
+      destination: endPoint,
+      travelMode: 'DRIVING'
+    }, function (response, status) {
+      if (status === 'OK') {
+        directionsRenderer.setDirections(response);
+      }
+    });
+  }
+
+
   var request = {
     origin: startPoint,
     destination: endPoint,
@@ -669,75 +692,80 @@ $("#submit").on("click", function (event) {
     url: directionsURL,
     method: "GET"
   })
-
     .then(function (response) {
-      var results = response.data;
+      //var results = response.data;
       console.log("Google directions API object below")
-       console.log(response)
+      console.log(response)
+
+
+
       if (response.status == "NOT_FOUND") {
-        $("#pointA").val("Invalid Adress");
+        $("#pointA").val("Invalid Address");
         $("#pointB").val("Please Try Again");
       }
+
+      /*
       else {
         console.log(response.routes[0].legs[0].steps[0].html_instructions)
         var distanceValue;
-        for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
-          var steps = $("<h6>");
-          steps.addClass("card-title");
-          steps.html(response.routes[0].legs[0].steps[i].html_instructions);
-          $("#directions").append(steps);
-          distanceValue = response.routes[0].legs[0].steps[i].distance.value;
-          // console.log(response.routes[0].legs[0].steps[i].distance); 
-          // distanceValue will be used to determine locations for which to check weather
-          var startLat = response.routes[0].legs[0].start_location.lat;
-          var startLong = response.routes[0].legs[0].start_location.lng;
-          var originCoords = startLat + "," + startLong;
-          // coordsToCheck.push(originCoords)
+        */
+      for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
+        var distanceValue = response.routes[0].legs[0].steps[i].distance.value;
+        // console.log(response.routes[0].legs[0].steps[i].distance); 
+        // distanceValue will be used to determine locations for which to check weather
 
+        // var startLat = response.routes[0].legs[0].start_location.lat;
+        // var startLong = response.routes[0].legs[0].start_location.lng;
+        // var originCoords = startLat + "," + startLong;
+        // coordsToCheck.push(originCoords)
+        //getGeocodeCity(originCoords);
 
-          if (distanceValue >= 80000) {
-            var lat = response.routes[0].legs[0].steps[i].end_location.lat;
-            var lng = response.routes[0].legs[0].steps[i].end_location.lng;
-            var latLong = [lat, lng];
-            coordsToCheck.push(latLong)
-            // return(coordsToCheck)
-          }
-
-          var endLat = response.routes[0].legs[0].end_location.lat;
-          var endLong = response.routes[0].legs[0].end_location.lng;
-          var endCoords = endLat + "," + endLong;
-          // coordsToCheck.push(endCoords)
+        if (distanceValue >= 80000) {
+          var lat = response.routes[0].legs[0].steps[i].end_location.lat;
+          var lng = response.routes[0].legs[0].steps[i].end_location.lng;
+          var latLong = lat + "," + lng;
+          coordsToCheck.push(latLong)
+          console.log(coordsToCheck)
         }
       }
-
-      getGeocodeCity(originCoords);
-
       for (var i = 0; i < coordsToCheck.length; i++) {
         getGeocodeCity(coordsToCheck[i])
       }
 
-      // var endpoint = async () => {
-      //   await delay(3000);
-      //   getGeocodeCity(endCoords);
-      // }
-      //endpoint();
-
+      console.log(convertedCoords)
+      // var endLat = response.routes[0].legs[0].end_location.lat;
+      // var endLong = response.routes[0].legs[0].end_location.lng;
+      // var endCoords = endLat + "," + endLong;
+      // coordsToCheck.push(endCoords)
+      return convertedCoords;
     })
 
+
+
+
+  // var endpoint = async () => {
+  //   await delay(3000);
+  //   getGeocodeCity(endCoords);
+  // }
+  //endpoint();
+  console.log("---------------------convertedCoords array-------------------- " + convertedCoords)
 
 })
 
 
+//})
+
+
 $("#submit").on("click", function () {
+  // $("tbody").empty();
   async function delay(ms) {
     // return await for better async stack trace support in case of errors.
     return await new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  function first() {
-    console.log("CITY NAMES ARE: " + convertedCoords)
-
-  }
+  // function first() {
+  //   console.log("CITY NAMES ARE: " + convertedCoords)
+  // }
   function second() {
     // console.log('second')
 
@@ -802,11 +830,11 @@ $("#submit").on("click", function () {
 
   }
   let run = async () => {
-    await delay(2000);
-    first();
+    // await delay(1000);
+    // first();
     // getGeocodeCity(endCoords);
 
-    await delay(5000)
+    await delay(2000)
     second();
   }
 
