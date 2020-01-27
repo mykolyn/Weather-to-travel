@@ -1,12 +1,16 @@
 body {
-  
-    background: url(white-waves.png) ;
+    
+    background: url(../background/back.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 1;
 }
 
 p {
   font-family: 'Josefin Sans', sans-serif;
-  color: #fff;
+  color: rgb(149,153,221);
+  font-size: 20px;
+  
 
 }
 
@@ -65,7 +69,7 @@ p {
 }
 
 .nav-container {
-  max-width: 1000px;
+  max-width: 3000px;
   margin: 0 auto;
 }
 
@@ -174,7 +178,7 @@ nav ul li ul li a {
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: #ffffff;
+  background: rgb(149,153,221);
   position: absolute;
   display: block;
   content: '';
@@ -244,14 +248,14 @@ input {
   border-radius: 25px;
   margin-top: -1px;
 }
-
-.card-input{
-  margin: 20px;
+#one {
+  padding: 0px;
 }
-/* -------------------end of input form--------------------- */
+
+
 
 #map {
-    height: 600px;
+    height: 450px;
     width: 100%;
     background-color: lightslategray;
 }
@@ -293,20 +297,23 @@ input {
 
 /* ----------------------------output: route directions------------------------------- */
 
-/* scroll bar */
-/* http://jsfiddle.net/q4CqZ/6/ */
-.dyn-height {
-  width:100%;
-  max-height:600px;
-  overflow-y:auto;
-}
 
 
 /* font awesome */
 .fas {
-  font-size: 2em;
-  color: #f8c967;
+
+  size: 4x;
+  color: blue;
+
+  font-size: 1.75em;
+  /* color: #F53B33; */
+  /* color: #FF383E; */
+  color: #E74647;
+
   margin-right: 5px;
+}
+.card-header span {
+  font-size: 1.75em;
 }
 
 
@@ -327,7 +334,7 @@ input {
     display: grid;
     grid-template-rows: auto 1fr auto;
     font-size: 14px;
-    background-color: #f4f4f4;
+    background-color: transparent;
     align-items: start;
     min-height: 100vh;
   }
@@ -336,9 +343,9 @@ input {
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
-    color: #2f2f2f;
-    background-color: #fff;
-    border-top: 1px solid #e5e5e5;
+    color: rgb(149,153,221);
+    background-color: transparent;
+    /* w */
   }
   
   .footer > * {
@@ -370,7 +377,7 @@ input {
   
   .footer address {
     font-style: normal;
-    color: #999;
+    color: rgb(149,153,221);
   }
   
   .footer__btn {
@@ -412,7 +419,7 @@ input {
   }
   
   .nav__ul a {
-    color: #999;
+    color: rgb(149,153,221);
   }
   
   .nav__ul--extra {
@@ -423,7 +430,7 @@ input {
   .legal {
     display: flex;
     flex-wrap: wrap;
-    color: #999;
+    color: rgb(149,153,221);
   }
     
   .legal__links {
@@ -465,6 +472,10 @@ input {
   .table {
     color: #664BF3;
     font-weight: bold;
+    font-family: 'helvetica';
+    font-weight: 400;
+    /* text-transform: lowercase; */
+    font-size: 1.5rem;
 
   }
 
@@ -479,5 +490,14 @@ input {
   #three{
     padding-top: 70px;
   }
+  
+  
 
+
+/*----------------parallax-----------*/
+.parallax {
+  min-height: 500PX;
+  background: transparent;
+  
+}
 
