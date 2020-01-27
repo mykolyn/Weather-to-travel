@@ -401,8 +401,7 @@ function getGeocodeCity(coordinates) {
 //event listener for submit bttn:
 $("#submit").on("click", function (event) {
   event.preventDefault();
-  var coordsToCheck = [];
-  // var convertedCoords = [];
+  
   $("#directions").empty();
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
@@ -780,18 +779,13 @@ $("#submit").on("click", function (event) {
 
 // Check weather for cities along the route and append info to the page. 
 $("#submit").on("click", function () {
-  // $("tbody").empty();
+  $("#weatherInfo").empty();
   async function delay(ms) {
     // return await for better async stack trace support in case of errors.
     return await new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  // function first() {
-  //   console.log("CITY NAMES ARE: " + convertedCoords)
-  // }
-  function second() {
-    // console.log('second')
-
+  function first() {
 
     for (var i = 0; i < convertedCoords.length; i++) {
       var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
@@ -850,7 +844,12 @@ $("#submit").on("click", function () {
       return formattedTime
     }
 
+    
+  }
 
+  function second() {
+    coordsToCheck = [];
+    convertedCoords = [];
   }
   // Delay weather API call to allow time for cities array to be filled:
   let run = async () => {
@@ -859,6 +858,9 @@ $("#submit").on("click", function () {
     // getGeocodeCity(endCoords);
 
     await delay(2000)
+    first();
+
+    await delay(1000);
     second();
   }
 

@@ -1,28 +1,27 @@
 body {
-    background: url("white-waves.png");
+    background: url("dark_geometric.png");
     /*background-repeat: no-repeat;
     background-position: center;*/
     opacity: 1;
 }
 
 #aboutTeam{
-  background-color: white;
-  padding: 5px 30px 30px 30px;
-}
-
-#contactUs{
+  background-color: rgb(236, 240, 243);
   padding: 5px 30px 30px 30px;
 }
 
 #features{
-  background-color: white;
+  background-color: rgb(236, 240, 243);
 }
+#contactUs{
+  padding: 5px 30px 30px 30px;
+  background-color: rgb(236, 240, 243);
+}
+
 p {
   font-family: 'Josefin Sans', sans-serif;
   color: rgb(149,153,221);
   font-size: 20px;
-  
-
 }
 
 #homeButton {
@@ -317,6 +316,10 @@ input {
 
 #aboutMeIcons{
   margin-right: 20px;
+  background-color: rgb(236, 240, 243);
+}
+#aboutMeIcons3{
+  background-color: rgb(236, 240, 243);
 }
 
 /* ----------------------------output: route directions------------------------------- */
@@ -401,7 +404,7 @@ input {
   
   .footer address {
     font-style: normal;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .footer__btn {
@@ -443,7 +446,7 @@ input {
   }
   
   .nav__ul a {
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .nav__ul--extra {
@@ -454,7 +457,7 @@ input {
   .legal {
     display: flex;
     flex-wrap: wrap;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
     
   .legal__links {
@@ -506,15 +509,18 @@ input {
   /* ----------------scrollify------------------ */
 
   #one{
-    padding-top: 70px;
+    padding-top: 68px;
   }
   #two{
-    padding-top: 50px;
+    padding-top: 25px;
   }
   #three{
-    padding-top: 70px;
+    padding-top: 67px;
   }
   
+  #four{
+    padding-top: 50px;
+  }
   
 
 
@@ -524,3 +530,7 @@ input {
   background: transparent;
   
 }
+
+
+
+
