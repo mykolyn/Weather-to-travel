@@ -20,7 +20,8 @@ body {
 
 p {
   font-family: 'Josefin Sans', sans-serif;
-  color: rgb(149,153,221);
+  color: silver;
+  /* color: rgb(149,153,221); */
   font-size: 20px;
 }
 
