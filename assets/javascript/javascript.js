@@ -771,7 +771,7 @@ $("#submit").on("click", function () {
 
 
     for (var i = 0; i < convertedCoords.length; i++) {
-      var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
+      var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
 
       $.ajax({
         url: queryURL,
