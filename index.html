@@ -10,8 +10,7 @@
     <!-- Reset Css -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet">
-    <!-- Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,700|Open+Sans:300,400&display=swap" rel="stylesheet">        <!-- Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- bootstrap.css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -37,12 +36,13 @@
 </head>
 
 <body>
-
     <!-- nav bar - home/about me -->
     <section class="navigation sticky">
         <div class="nav-container">
             <div class="brand">
-                <a href="#!">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/icons/icons8-alps-100.png" width="50" height="50" alt="">
+                  </a>
             </div>
             <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
@@ -178,7 +178,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg"
                                 class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
-                        <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+                        <h5 class="font-weight-bold mt-4 mb-3">Jennifer</h5>
                         <p class="text-uppercase blue-text"><strong>Graphic designer</strong></p>
                         <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
                             consectetur,
@@ -205,7 +205,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg"
                                 class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
-                        <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
+                        <h5 class="font-weight-bold mt-4 mb-3">Michael</h5>
                         <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
                         <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa
                             accusantium
@@ -229,7 +229,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
                                 class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
-                        <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
+                        <h5 class="font-weight-bold mt-4 mb-3">Hebah</h5>
                         <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
                         <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                             deserunt
@@ -257,7 +257,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
                                 class="rounded-circle z-depth-1" alt="Sample avatar">
                         </div>
-                        <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
+                        <h5 class="font-weight-bold mt-4 mb-3">Tyler</h5>
                         <p class="text-uppercase blue-text"><strong>Backend developer</strong></p>
                         <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui
                             consectetur
@@ -450,79 +450,95 @@
             </div>
         </div>
 
-<!--footer-->
-        <footer class="footer" id="footer">
+
+
+             <!-- footer - -->
+    
+        <footer class="footer">
             <div class="footer__addr">
                 <h1 class="footer__logo">Weather to Travel</h1>
 
                 <h2>Contact</h2>
 
-                <address style="color: white;">
+                <address>
                     5534 Somewhere In. The World 22193-10212<br>
 
-
-                    <a class="footer__btn" href="mailto:example@gmail.com" style="background-color: white;">Email Us</a>
+                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
                 </address>
             </div>
 
             <ul class="footer__nav">
-                <li class="nav__item" >
-                    <h2 class="nav__title">Libraries/Frameworks</h2>
-
+                <li class="nav__item">
+                    <h2 class="nav__title">Frameworks</h2>
+    
                     <ul class="nav__ul">
+    
                         <li>
-                            <a href="#" style="color: white;">jQuery</a>
+                            <a href="https://getbootstrap.com/">BootStrap 4.4</a>
                         </li>
-
                         <li>
-                            <a href="#" style="color: white;">Scrollify</a>
+                            <a href="https://mdbootstrap.com/">MDB</a>
                         </li>
-
-                        <li>
-                            <a href="#" style="color: white;">BootStrap</a>
-                        </li>
+    
+    
                     </ul>
                 </li>
 
+                <li class="nav__item">
+                    <h2 class="nav__title">Libraries</h2>
+    
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="https://jquery.com/">jQuery 3.4.1</a>
+                        </li>
+                        <li>
+                            <a href="https://projects.lukehaas.me/scrollify/#home">Scrollify</a>
+                        </li>
+                        <li>
+                            <a href="http://pixelcog.github.io/parallax.js">Parallax</a>
+                        </li>
+    
+                    </ul>
+                </li>
+                <!-- 
                 <li class="nav__item nav__item--extra">
                     <h2 class="nav__title">APIs</h2>
 
-                    <ul class="nav__ul nav__ul--extra">
+                    <ul class="nav__ul nav__ul--extra"> -->
+
+
+                <li class="nav__item">
+                    <h2 class="nav__title">APIs</h2>
+
+                    <ul class="nav__ul">
                         <li>
-                            <a href="#" style="color: white;">Google Maps</a>
+                            <a href="https://cloud.google.com/maps-platform/">Google Maps</a>
                         </li>
 
                         <li>
-                            <a href="#" style="color: white;">Weather</a>
+                            <a href="https://openweathermap.org/api">Open Weather</a>
                         </li>
 
-                        <li>
-                            <a href="#" style="color: white;">Geocode</a>
-                        </li>
-                        <li>
-                            <a href="#" style="color: white;">filler</a>
-                        </li>
+
                 </li>
             </ul>
-            </li>
 
             <li class="nav__item">
-                <h2 class="nav__title">Legal</h2>
+                <h2 class="nav__title">Resources</h2>
 
                 <ul class="nav__ul">
                     <li>
-                        <a href="#" style="color: white;">Privacy Policy</a>
+                        <a href="https://icons8.com/">icon8</a>
                     </li>
-
                     <li>
-                        <a href="#" style="color: white;">Terms of Use</a>
-                    </li>
-
-                    <li>
-                        <a href="#" style="color: white;">Sitemap</a>
+                        <a href="https://www.pexels.com/">Pexels</a>
                     </li>
                 </ul>
             </li>
+
+           
+
+           
             </ul>
         </footer>
     </section>

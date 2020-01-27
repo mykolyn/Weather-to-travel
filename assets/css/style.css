@@ -37,16 +37,17 @@ p {
 }
 
 .header {
-  font-family: 'Amatic SC', cursive;
+  font-family:'Dosis', cursive;
+  font-weight: 700;
 }
 
 .header-text{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 .header-bttn{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 /* nav bar */
@@ -262,7 +263,17 @@ input {
   padding: 0px;
 }
 
+.contact-buffer {
+  margin-top:500px;
+  padding: 25px;
+}
 
+
+.about-card{
+  position: relative;
+  height: 600px;
+  margin-top: 1000px;
+}
 
 #map {
     height: 450px;
@@ -340,7 +351,7 @@ input {
     box-sizing: border-box;
   }
   
-  html {
+  /* html {
     font-size: 100%;
   }
   
@@ -354,7 +365,7 @@ input {
     align-items: start;
     min-height: 100vh;
   }
-  
+   */
   .footer {
     display: flex;
     flex-flow: row wrap;
@@ -393,7 +404,7 @@ input {
   
   .footer address {
     font-style: normal;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .footer__btn {
@@ -435,7 +446,7 @@ input {
   }
   
   .nav__ul a {
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .nav__ul--extra {
@@ -446,7 +457,7 @@ input {
   .legal {
     display: flex;
     flex-wrap: wrap;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
     
   .legal__links {
@@ -519,4 +530,7 @@ input {
   background: transparent;
   
 }
+
+
+
 
