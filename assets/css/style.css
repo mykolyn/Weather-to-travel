@@ -401,7 +401,7 @@ input {
   
   .footer address {
     font-style: normal;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .footer__btn {
@@ -443,7 +443,7 @@ input {
   }
   
   .nav__ul a {
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
   
   .nav__ul--extra {
@@ -454,7 +454,7 @@ input {
   .legal {
     display: flex;
     flex-wrap: wrap;
-    color: rgb(149,153,221);
+    color: #ffffff;
   }
     
   .legal__links {
@@ -524,3 +524,7 @@ input {
   background: transparent;
   
 }
+
+
+
+
