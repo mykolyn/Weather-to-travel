@@ -845,3 +845,25 @@ $("#submit").on("click", function () {
 
 })
 
+
+('.parallax').parallax({imageSrc: 'assets/background/back.jpg'});
+// $('.parallax').parallax({imageSrc: '/assets.background.back.jpg'});
+// var image = document.getElementsByClassName('thumbnail');
+// new simpleParallax(image, {
+// 	delay: .6,
+// 	transition: 'cubic-bezier(0,0,0,1)'
+// });
+// console.log(image)
+//AJAX call to convert locations into coordinates
+
+// function to find location every 50 miles from starting point:
+//
+
+//AJAX call to weather api with coordinates
+
+//render route list and append weather forecast to list
+
+//-------------------------------------------------------//
+
+
+
