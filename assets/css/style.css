@@ -1,11 +1,21 @@
 body {
-    
-    background: url(../background/back.jpg) ;
+    background: url("assets/css/white-waves.png");
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1;
 }
+#aboutTeam{
+  background-color: white;
+  padding: 5px 30px 30px 30px;
+}
 
+#contactUs{
+  padding: 5px 30px 30px 30px;
+}
+
+#features{
+  background-color: white;
+}
 p {
   font-family: 'Josefin Sans', sans-serif;
   color: rgb(149,153,221);
@@ -344,7 +354,7 @@ input {
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
     color: rgb(149,153,221);
-    background-color: transparent;
+    background-color:#697561;
     /* w */
   }
   
@@ -500,4 +510,3 @@ input {
   background: transparent;
   
 }
-
