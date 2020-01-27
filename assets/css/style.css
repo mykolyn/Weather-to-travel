@@ -1,9 +1,10 @@
 body {
-    background: url("assets/css/white-waves.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url("white-waves.png");
+    /*background-repeat: no-repeat;
+    background-position: center;*/
     opacity: 1;
 }
+
 #aboutTeam{
   background-color: white;
   padding: 5px 30px 30px 30px;
@@ -61,7 +62,7 @@ p {
 
 .navigation {
   height: 70px;
-  background: #acb7ae;
+  background: #697561;
 }
 
 .brand {
@@ -100,7 +101,7 @@ nav ul li a:visited {
   display: block;
   padding: 0 20px;
   line-height: 70px;
-  background: #acb7ae;
+  background: #697561;
   color: #ffffff;
   text-decoration: none;
 }
@@ -303,7 +304,9 @@ input {
   margin-bottom: 10px; /* Added */
 }
 
-
+#aboutMeIcons{
+  margin-right: 20px;
+}
 
 /* ----------------------------output: route directions------------------------------- */
 
@@ -353,7 +356,7 @@ input {
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
-    color: rgb(149,153,221);
+    color:white;
     background-color:#697561;
     /* w */
   }
