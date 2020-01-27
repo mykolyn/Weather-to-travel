@@ -47,7 +47,7 @@ p {
 
 .navigation {
   height: 70px;
-  background: #262626;
+  background: #acb7ae;
 }
 
 .brand {
@@ -86,13 +86,13 @@ nav ul li a:visited {
   display: block;
   padding: 0 20px;
   line-height: 70px;
-  background: #262626;
+  background: #acb7ae;
   color: #ffffff;
   text-decoration: none;
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #2581DC;
+  background: #E6f4d2;
   color: #ffffff;
 }
 nav ul li a:not(:only-child):after,
@@ -112,7 +112,7 @@ nav ul li ul li a {
   position: absolute;
   display: none;
   z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px#acb7ae(0, 0, 0, 0.15);
 }
 
 /* Mobile navigation */
@@ -121,7 +121,7 @@ nav ul li ul li a {
   position: absolute;
   top: 0;
   right: 0;
-  background: #262626;
+  background: #acb7ae;
   height: 70px;
   width: 70px;
   border: 1px solid yellow;
@@ -212,15 +212,33 @@ article {
 /* -----------------------input form------------------------- */
 
 input {
-    width: 58%;
+    width: 100%;
+    height: 40%;
+    margin-bottom: 15px;
 }
 
 
 #userInput {
-  background-color: #5963AC;
+  background-color: #acb7ae;
     border-radius: 25px;
     padding: 20px;
+    font-size: 15px;
 }
+
+ #submit{
+   margin-top: 36px;
+   margin-left: 30px;
+   padding: 6px 10px 6px 10px;
+   background-color: white;
+ }
+ 
+ #leftCol{
+  padding-left: 50px;
+ }
+
+ #rightCol{
+  padding-left: 40px;
+ }
 
 .submit-round {
   border-radius: 25px;
