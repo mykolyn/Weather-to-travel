@@ -41,6 +41,22 @@ window.onload = deferVideo;
   }); // end DOM ready
 })(jQuery); // end jQuery
 
+$(function () {
+   
+  // this code is for this demo only
+  $('button').click(function(){
+    $('.wrapper').toggleClass('loading');
+  });
+  
+  /*
+$('table').tablesorter({
+  theme: 'blue',
+      initialized: function(){
+        $('.wrapper').removeClass('loading');
+      }
+});
+  */
+});
 
 
 
@@ -51,7 +67,12 @@ var startPoint;
 var endPoint;
 
 //-------------------------------------------------------------------------------
+$wrapper = $(".wrapper");
 
+$(document).on({
+    ajaxStart: function() { $wrapper.addClass("loading");    },
+     ajaxStop: function() { $wrapper.removeClass("loading"); }    
+});
 // map functions
 // function initMap() {
 //   var directionsService = new google.maps.DirectionsService();
@@ -844,6 +865,15 @@ $("#submit").on("click", function () {
   run();
 
 })
+
+// $(document).ready(function(){
+//   ajaxStart(){
+//     $('.mask').addClass('ajax'),\
+//   }
+//   ajaxComplete(){
+//     $('.mask').removeClass('ajax');
+//   }
+// })
 
 
 ('.parallax').parallax({imageSrc: 'assets/background/back.jpg'});

@@ -10,8 +10,7 @@
     <!-- Reset Css -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet">
-    <!-- Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,700|Open+Sans:300,400&display=swap" rel="stylesheet">        <!-- Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- bootstrap.css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -42,7 +41,10 @@
     <section class="navigation sticky">
         <div class="nav-container">
             <div class="brand">
-                <a href="#!">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/icons/untitled.svg" width="30" height="30" alt="">
+                  </a>
+                <!-- <a href="#!">Logo</a> -->
             </div>
             <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
@@ -472,7 +474,7 @@
                 <li class="nav__item" >
                     <h2 class="nav__title">Libraries/Frameworks</h2>
 
-                    <ul class="nav__ul">
+                    <ul class="nav__ul nav__ul--extra">
                         <li>
                             <a href="#" style="color: white;">jQuery</a>
                         </li>
@@ -484,7 +486,6 @@
                         <li>
                             <a href="#" style="color: white;">BootStrap</a>
                         </li>
-                    </ul>
                 </li>
 
                 <li class="nav__item nav__item--extra">
