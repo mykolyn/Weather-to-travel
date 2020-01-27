@@ -355,6 +355,7 @@ function initMap() {
 
 //-------------------------------------------- Dont touch this code above--------------------------------
 // ---------------------------------------------------------------------------------------------------------
+
 // Google Geocoding API to convert coordinates to address/city:
 function getGeocodeCity(coordinates) {
   var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coordinates + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
@@ -376,7 +377,7 @@ function getGeocodeCity(coordinates) {
 // var sampleCoords = "30.66, -88.20"
 // getGeocodeCity(sampleCoords)
 
-//event listener for submit bttn
+//event listener for submit bttn:
 $("#submit").on("click", function (event) {
   event.preventDefault();
   var coordsToCheck = [];
@@ -388,7 +389,7 @@ $("#submit").on("click", function (event) {
 
   convertedCoords.push(startPoint)
   convertedCoords.push(endPoint)
-
+  // Puts map on screen with route outlined:
   var styledMapType = new google.maps.StyledMapType(
     [
       {
@@ -709,6 +710,8 @@ $("#submit").on("click", function (event) {
         console.log(response.routes[0].legs[0].steps[0].html_instructions)
         var distanceValue;
         */
+
+      // Checks distance for each step of route. Saves long distances to variable:
       for (var i = 0; i < response.routes[0].legs[0].steps.length; i++) {
         var distanceValue = response.routes[0].legs[0].steps[i].distance.value;
         // console.log(response.routes[0].legs[0].steps[i].distance); 
@@ -719,7 +722,6 @@ $("#submit").on("click", function (event) {
         // var originCoords = startLat + "," + startLong;
         // coordsToCheck.push(originCoords)
         //getGeocodeCity(originCoords);
-
         if (distanceValue >= 80000) {
           var lat = response.routes[0].legs[0].steps[i].end_location.lat;
           var lng = response.routes[0].legs[0].steps[i].end_location.lng;
@@ -728,6 +730,7 @@ $("#submit").on("click", function (event) {
           console.log(coordsToCheck)
         }
       }
+      // Pull coordinates for points after long distances
       for (var i = 0; i < coordsToCheck.length; i++) {
         getGeocodeCity(coordsToCheck[i])
       }
@@ -753,9 +756,8 @@ $("#submit").on("click", function (event) {
 })
 
 
-//})
 
-
+// Check weather for cities along the route and append info to the page. 
 $("#submit").on("click", function () {
   // $("tbody").empty();
   async function delay(ms) {
@@ -771,7 +773,7 @@ $("#submit").on("click", function () {
 
 
     for (var i = 0; i < convertedCoords.length; i++) {
-      var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
+      var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + convertedCoords[i] + "&appid=fe2767efcdc5875e488e5fcdeb27a943&units=imperial"
 
       $.ajax({
         url: queryURL,
@@ -807,7 +809,7 @@ $("#submit").on("click", function () {
     }
 
 
-
+    // Unix time converter:
     function timeConverter(a) {
       let unix_timestamp = a
       // Create a new JavaScript Date object based on the timestamp
@@ -829,6 +831,7 @@ $("#submit").on("click", function () {
 
 
   }
+  // Delay weather API call to allow time for cities array to be filled:
   let run = async () => {
     // await delay(1000);
     // first();
@@ -841,6 +844,7 @@ $("#submit").on("click", function () {
   run();
 
 })
+
 
 ('.parallax').parallax({imageSrc: 'assets/background/back.jpg'});
 // $('.parallax').parallax({imageSrc: '/assets.background.back.jpg'});
@@ -860,5 +864,6 @@ $("#submit").on("click", function () {
 //render route list and append weather forecast to list
 
 //-------------------------------------------------------//
+
 
 
