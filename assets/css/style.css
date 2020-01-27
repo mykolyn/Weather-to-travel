@@ -1,11 +1,22 @@
 body {
-    
-    background: url(../background/back.jpg) ;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url("white-waves.png");
+    /*background-repeat: no-repeat;
+    background-position: center;*/
     opacity: 1;
 }
 
+#aboutTeam{
+  background-color: white;
+  padding: 5px 30px 30px 30px;
+}
+
+#contactUs{
+  padding: 5px 30px 30px 30px;
+}
+
+#features{
+  background-color: white;
+}
 p {
   font-family: 'Josefin Sans', sans-serif;
   color: rgb(149,153,221);
@@ -27,16 +38,17 @@ p {
 }
 
 .header {
-  font-family: 'Amatic SC', cursive;
+  font-family:'Dosis', cursive;
+  font-weight: 700;
 }
 
 .header-text{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 .header-bttn{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 /* nav bar */
@@ -51,7 +63,7 @@ p {
 
 .navigation {
   height: 70px;
-  background: #262626;
+  background: #697561;
 }
 
 .brand {
@@ -90,13 +102,13 @@ nav ul li a:visited {
   display: block;
   padding: 0 20px;
   line-height: 70px;
-  background: #262626;
+  background: #697561;
   color: #ffffff;
   text-decoration: none;
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #2581DC;
+  background: #E6f4d2;
   color: #ffffff;
 }
 nav ul li a:not(:only-child):after,
@@ -116,7 +128,7 @@ nav ul li ul li a {
   position: absolute;
   display: none;
   z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px#acb7ae(0, 0, 0, 0.15);
 }
 
 /* Mobile navigation */
@@ -125,7 +137,7 @@ nav ul li ul li a {
   position: absolute;
   top: 0;
   right: 0;
-  background: #262626;
+  background: #acb7ae;
   height: 70px;
   width: 70px;
   border: 1px solid yellow;
@@ -210,11 +222,59 @@ article {
 }
 
 
+
+
+
+/* -----------------------input form------------------------- */
+
+input {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 15px;
+}
+
+
+#userInput {
+  background-color: #acb7ae;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+ #submit{
+   margin-top: 36px;
+   margin-left: 30px;
+   padding: 6px 10px 6px 10px;
+   background-color: white;
+ }
+ 
+ #leftCol{
+  padding-left: 50px;
+ }
+
+ #rightCol{
+  padding-left: 40px;
+ }
+
+.submit-round {
+  border-radius: 25px;
+  margin-top: -1px;
+}
 #one {
   padding: 0px;
 }
 
+.contact-buffer {
+  margin-top:500px;
+  padding: 25px;
+}
 
+
+.about-card{
+  position: relative;
+  height: 600px;
+  margin-top: 1000px;
+}
 
 #map {
     height: 450px;
@@ -255,7 +315,9 @@ article {
   margin-bottom: 10px; /* Added */
 }
 
-
+#aboutMeIcons{
+  margin-right: 20px;
+}
 
 /* ----------------------------output: route directions------------------------------- */
 
@@ -286,7 +348,7 @@ article {
     box-sizing: border-box;
   }
   
-  html {
+  /* html {
     font-size: 100%;
   }
   
@@ -300,13 +362,13 @@ article {
     align-items: start;
     min-height: 100vh;
   }
-  
+   */
   .footer {
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
-    color: rgb(149,153,221);
-    background-color: transparent;
+    color:white;
+    background-color:#697561;
     /* w */
   }
   
@@ -462,4 +524,3 @@ article {
   background: transparent;
   
 }
-
