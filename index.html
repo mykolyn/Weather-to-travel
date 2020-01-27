@@ -10,8 +10,7 @@
     <!-- Reset Css -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet">
-    <!-- Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,700|Open+Sans:300,400&display=swap" rel="stylesheet">        <!-- Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- bootstrap.css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -38,21 +37,14 @@
 
 <body>
 
-
-
-
-
-    <!----------------PATALLAX-------------->
-    <!-- <img class="thumbnail" src="assets/background/norway3.jpg" alt="image"> -->
-
-
-
-
     <!-- nav bar - home/about me -->
     <section class="navigation sticky">
         <div class="nav-container">
             <div class="brand">
-                <a href="#!">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/icons/untitled.svg" width="30" height="30" alt="">
+                  </a>
+                <!-- <a href="#!">Logo</a> -->
             </div>
             <nav>
                 <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
@@ -76,19 +68,12 @@
             </nav>
         </div>
     </section>
-    <!-- <div class="parallax" data-parallax="scroll" data-z-index="-1" data-image-src="assets/background/back.jpg"></div>
-  -->
 
-
-    <!-- <article>
-        <h2>Navigation</h2>
-        <p>Responsive Dropdown Navigation Bar.</p>
-        <p>Want to see how it's made? <a href="http://www.taniarascia.com/responsive-dropdown-navigation-bar/">Read the tutorial!</a></p>
-      </article> -->
     <section class="item" id="one">
         <div class="jumbotron jumbotron-fluid">
-             <!-------PARALLAX-------->
-       
+
+            <!-------PARALLAX-------->
+
             <video autoplay muted loop poster="https://dummyimage.com/900x400/000/fff">
                 <source src="" data-src="assets/media/roadtrip.mp4" type="video/mp4">
                 <!-- <source src="" data-src="//clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm">
@@ -108,10 +93,10 @@
         <div class="container aboutme" id="aboutMe">
 
             <div class="d-flex">
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 540px;" id="aboutMeIcons">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="assets/icons/icons8-hand-with-pen-100.png" class="card-img" alt="...">
+                            <img src="assets/icons/icons8-hard-to-find-64.png" class="card-img" alt="..." style="padding-top: 30px;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -125,10 +110,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 540px;" id="aboutMeIcons">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="assets/icons/icons8-waypoint-map-100.png" class="card-img" alt="...">
+                            <img src="assets/icons/icons8-map-64.png" class="card-img" alt="..." style="padding-top: 30px;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -145,7 +130,7 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="assets/icons/icons8-sun-100.png" class="card-img" alt="...">
+                            <img src="assets/icons/icons8-haze-64.png" class="card-img" alt="..." style="padding-top: 30px;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -169,11 +154,8 @@
         <!-- About the team-->
         <section class="item" id="two">
 
-             <!-------PARALLAX-------->
-        <div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="assets/background/norway3.jpg"></div>
- 
             <!-- Section: Team v.1 -->
-            <section class="team-section text-center my-5">
+            <section class="team-section text-center my-5" id="aboutTeam">
 
                 <!-- Section heading -->
                 <h2 class="h1-responsive font-weight-bold my-5">Our Amazing Team</h2>
@@ -218,7 +200,6 @@
                             </a>
                         </ul>
                     </div>
-                    <!-- Grid column -->
 
                     <!-- Grid column -->
                     <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
@@ -300,117 +281,20 @@
 
             </section>
             <!-- end of container -->
-
-            <!-----PARALLAX-->
-         
-
-            <!-- end of container -->
     </div>
 
     <!-- about the project -->
-    <section class="item" id="four">
-
-
+    <section class="item" id="three">
             <div class="parallax" data-parallax="scroll" data-z-index="1"
-            data-image-src="assets/background/norway1.jpg"></div>
+                data-image-src="assets/background/norway1.jpg"></div>
 
-        <div>
-            <h2>About the Project</h2>
-        </div>
-    </section>
-    <div class="container pt-5 my-5 z-depth-1">
-        <section class="p-md-3 mx-md-5">
-            <div class="row d-flex justify-content-between align-items-center">
-                <div class="col-md-6 mb-4">
-                    <h2 class="font-weight-bold mb-3">Features</h2>
-                    <p class="text-muted pt-3">
-                        Nobody ever plans for the unexpected and yet the unexpected still happens.
-                        Anything from rain, hail, sleet, snow, hurricane-level winds, and floods can cross someone's
-                        path while they’re going from point A to point B.
-                        Weather-to-Travel eliminates the “unexpected” completely and gives the user full comfort on
-                        their journey
-                        and the opportunity to adjust their plans based on the information provided.
-                    </p>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-md-0 mb-5">
-                    <h4 class="font-weight-bold mb-3">
-                        <i class="fa fa-layer-group indigo-text fa-10x"></i>
-                    </h4>
-                </div>
+            <div>
+                <h2>About the Project</h2>
             </div>
-            <div class="row pt-3">
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <h4 class="font-weight-bold mb-3">
-                        <i class="far fa-paper-plane indigo-text pr-2"></i> Feature 1
-                    </h4>
-                    <p class="text-muted mb-lg-0">
-                        Giving our users the ability to get the current weather in cities every 50 miles along their
-                        route.
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <h4 class="font-weight-bold mb-3">
-                        <i class="fas fa-pen-alt green-text pr-2"></i> Feature 2
-                    </h4>
-                    <p class="text-muted mb-lg-0">
-                        Consists of applied research and is used by its very own developers on a near daily basis. We
-                        don’t have time for bugs here.
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <h4 class="font-weight-bold mb-3">
-                        <i class="fas fa-user amber-text pr-2"></i> Feature 3
-                    </h4>
-                    <p class="text-muted mb-md-0">
-                        Our app is a collaboration from personal experience for explorers, by explorers, and everyone in
-                        between.
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <h4 class="font-weight-bold mb-3">
-                        <i class="fas fa-rocket red-text pr-2"></i> Feature 4
-                    </h4>
-                    <p class="text-muted mb-md-0">
-                        Now you can safely say you have the weather to travel.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
-    </section>
-
-    <!-- contact page -->
-    <section class="mb-4 item" id="five">
-
-  <!-----PARALLAX-->
-  <div class="parallax" data-parallax="scroll" data-z-index="1" data-image-src="assets/background/norway2.jpg"></div>
-
-
-        <div class="container card">
-
-
-            <!--Section heading-->
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-            <!--Section description-->
-            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to
-                contact us
-                directly. Our team will come back to you within
-                a matter of hours to help you.</p>
-
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-9 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
-                        <!--Grid row-->
-                        <div class="row">
-
-
-        <div class="container pt-5 my-5 z-depth-1">
+        <div class="container pt-5 my-5 z-depth-1" id="features">
             <section class="p-md-3 mx-md-5">
                 <div class="row d-flex justify-content-between align-items-center">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-8 mb-4">
                         <h2 class="font-weight-bold mb-3">Features</h2>
                         <p class="text-muted pt-3">
                             Nobody ever plans for the unexpected and yet the unexpected still happens.
@@ -423,14 +307,14 @@
                     </div>
                     <div class="col-md-6 col-lg-4 d-flex justify-content-center mb-md-0 mb-5">
                         <h4 class="font-weight-bold mb-3">
-                            <i class="fa fa-layer-group indigo-text fa-10x"></i>
+                            <img src="assets/icons/icons8-photo-gallery-64.png" class="card-img" alt="..." style="height: 250px; width: 250px;">
                         </h4>
                     </div>
                 </div>
                 <div class="row pt-3">
                     <div class="col-lg-3 col-md-6 mb-5">
                         <h4 class="font-weight-bold mb-3">
-                            <i class="far fa-paper-plane indigo-text pr-2"></i> Feature 1
+                            <img src="assets/icons/icons8-frost-warning-50.png" class="card-img" alt="..." style="height: 70px; width: 70px;"> Feature 1
                         </h4>
                         <p class="text-muted mb-lg-0">
                             Giving our users the ability to get the current weather in cities every 50 miles along their
@@ -439,25 +323,27 @@
                     </div>
                     <div class="col-lg-3 col-md-6 mb-5">
                         <h4 class="font-weight-bold mb-3">
-                            <i class="fas fa-pen-alt green-text pr-2"></i> Feature 2
+                            <img src="assets/icons/icons8-inspection-50.png" class="card-img" alt="..." style="height: 70px; width: 70px;"> Feature 2
                         </h4>
                         <p class="text-muted mb-lg-0">
                             Consists of applied research and is used by its very own developers on a near daily basis.
-                            We don’t have time for bugs here.
+                            We
+                            don’t have time for bugs here.
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-5">
                         <h4 class="font-weight-bold mb-3">
-                            <i class="fas fa-user amber-text pr-2"></i> Feature 3
+                            <img src="assets/icons/icons8-elderly-person-100.png" class="card-img" alt="..." style="height: 70px; width: 70px;"> Feature 3
                         </h4>
                         <p class="text-muted mb-md-0">
                             Our app is a collaboration from personal experience for explorers, by explorers, and
-                            everyone in between.
+                            everyone in
+                            between.
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-5">
                         <h4 class="font-weight-bold mb-3">
-                            <i class="fas fa-rocket red-text pr-2"></i> Feature 4
+                            <img src="assets/icons/icons8-ok-hand-100.png" class="card-img" alt="..." style="height: 70px; width: 70px;"> Feature 4
                         </h4>
                         <p class="text-muted mb-md-0">
                             Now you can safely say you have the weather to travel.
@@ -470,7 +356,7 @@
 
     <!-- contact page -->
     <section class="mb-4 item" id="five">
-        <div class="container card">
+        <div class="container card" id="contactUs">
 
 
             <!--Section heading-->
@@ -569,48 +455,37 @@
             </div>
         </div>
 
-        <footer class="footer">
+<!--footer-->
+        <footer class="footer" id="footer">
             <div class="footer__addr">
                 <h1 class="footer__logo">Weather to Travel</h1>
 
                 <h2>Contact</h2>
 
-                <address>
+                <address style="color: white;">
                     5534 Somewhere In. The World 22193-10212<br>
 
 
-
-        <footer class="footer">
-            <div class="footer__addr">
-                <h1 class="footer__logo">Weather to Travel</h1>
-
-                <h2>Contact</h2>
-
-                <address>
-                    5534 Somewhere In. The World 22193-10212<br>
-
-
-                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+                    <a class="footer__btn" href="mailto:example@gmail.com" style="background-color: white;">Email Us</a>
                 </address>
             </div>
 
             <ul class="footer__nav">
-                <li class="nav__item">
+                <li class="nav__item" >
                     <h2 class="nav__title">Libraries/Frameworks</h2>
 
-                    <ul class="nav__ul">
+                    <ul class="nav__ul nav__ul--extra">
                         <li>
-                            <a href="#">jQuery</a>
+                            <a href="#" style="color: white;">jQuery</a>
                         </li>
 
                         <li>
-                            <a href="#">Scrollify</a>
+                            <a href="#" style="color: white;">Scrollify</a>
                         </li>
 
                         <li>
-                            <a href="#">BootStrap</a>
+                            <a href="#" style="color: white;">BootStrap</a>
                         </li>
-                    </ul>
                 </li>
 
                 <li class="nav__item nav__item--extra">
@@ -618,18 +493,18 @@
 
                     <ul class="nav__ul nav__ul--extra">
                         <li>
-                            <a href="#">Google Maps</a>
+                            <a href="#" style="color: white;">Google Maps</a>
                         </li>
 
                         <li>
-                            <a href="#">Weather</a>
+                            <a href="#" style="color: white;">Weather</a>
                         </li>
 
                         <li>
-                            <a href="#">Geocode</a>
+                            <a href="#" style="color: white;">Geocode</a>
                         </li>
                         <li>
-                            <a href="#">filler</a>
+                            <a href="#" style="color: white;">filler</a>
                         </li>
                 </li>
             </ul>
@@ -640,28 +515,25 @@
 
                 <ul class="nav__ul">
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="#" style="color: white;">Privacy Policy</a>
                     </li>
 
                     <li>
-                        <a href="#">Terms of Use</a>
+                        <a href="#" style="color: white;">Terms of Use</a>
                     </li>
 
                     <li>
-                        <a href="#">Sitemap</a>
+                        <a href="#" style="color: white;">Sitemap</a>
                     </li>
                 </ul>
             </li>
             </ul>
         </footer>
     </section>
-
-
-    <script src="assets/javascript/simpleParallax.js"></script>
-
 </body>
 
-
+<!-- parallax.js -->
+<script src="assets/javascript/simpleParallax.js"></script>
 
 <!-- javascript -->
 <script src="assets/javascript/javascript.js"></script>
@@ -672,17 +544,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc&callback=initMap" async
     defer></script>
 
-<!-- Scrollify JS Library
-<script src="jquery.scrollify.js"></script>
-Scrollify JS Library  -->
-<!-- <script src="assets/javascript/jquery.scrollify.js"></script>
+<!-- Scrollify JS Library 
+<script src="assets/javascript/jquery.scrollify.js"></script>
 <script>
     $(function () {
         $(".item").css({ "height": $(window).height() });
         $.scrollify({
             section: ".item"
         });
-    }); -->
-<!-- </script> --> -->
-
+    });
+</script> -->
 </html>
