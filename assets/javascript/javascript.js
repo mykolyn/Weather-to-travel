@@ -51,7 +51,12 @@ var startPoint;
 var endPoint;
 
 //-------------------------------------------------------------------------------
+$body = $("body");
 
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
+});
 // map functions
 function initMap() {
   var directionsService = new google.maps.DirectionsService();
@@ -728,6 +733,7 @@ $("#submit").on("click", function (event) {
 })
 
 
+
 $("#submit").on("click", function () {
   async function delay(ms) {
     // return await for better async stack trace support in case of errors.
@@ -813,6 +819,15 @@ $("#submit").on("click", function () {
   run();
 
 })
+
+// $(document).ready(function(){
+//   ajaxStart(){
+//     $('.mask').addClass('ajax'),\
+//   }
+//   ajaxComplete(){
+//     $('.mask').removeClass('ajax');
+//   }
+// })
 
 //AJAX call to convert locations into coordinates
 
