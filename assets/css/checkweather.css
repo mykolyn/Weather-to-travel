@@ -55,7 +55,7 @@ input[type=text] {
 /* http://jsfiddle.net/q4CqZ/6/ */
 .dyn-height {
     width:100%;
-    max-height:525px;
+    max-height:465px;
     overflow-y:auto;
   }
 
@@ -92,7 +92,7 @@ input[type=text] {
    with position:fixed. Width, height, top and left speak
    for themselves. Background we set to 80% white with
    our animation centered, and no-repeating */
-   .modal {
+   /* .modal {
     display:    none;
     position:   fixed;
     z-index:    1000;
@@ -104,16 +104,39 @@ input[type=text] {
                 url('http://i.stack.imgur.com/FhHRx.gif') 
                 50% 50% 
                 no-repeat;
-}
+} */
 
 /* When the body has the loading class, we turn
    the scrollbar off with overflow:hidden */
-body.loading .modal {
+/* section.loading .modal {
     overflow: hidden;   
-}
+} */
 
 /* Anytime the body has the loading class, our
    modal element will be visible */
-body.loading .modal {
+/* section.loading .modal {
     display: block;
+} */
+
+
+
+/* ----------------------------- */
+
+
+.wrapper {
+    position: relative;
+    
+}
+.loading:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.3) center center no-repeat url('data:image/gif;base64,R0lGODlhFAAUAKEAAO7u7lpaWgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQBCgACACwAAAAAFAAUAAACQZRvoIDtu1wLQUAlqKTVxqwhXIiBnDg6Y4eyx4lKW5XK7wrLeK3vbq8J2W4T4e1nMhpWrZCTt3xKZ8kgsggdJmUFACH5BAEKAAIALAcAAAALAAcAAAIUVB6ii7jajgCAuUmtovxtXnmdUAAAIfkEAQoAAgAsDQACAAcACwAAAhRUIpmHy/3gUVQAQO9NetuugCFWAAAh+QQBCgACACwNAAcABwALAAACE5QVcZjKbVo6ck2AF95m5/6BSwEAIfkEAQoAAgAsBwANAAsABwAAAhOUH3kr6QaAcSrGWe1VQl+mMUIBACH5BAEKAAIALAIADQALAAcAAAIUlICmh7ncTAgqijkruDiv7n2YUAAAIfkEAQoAAgAsAAAHAAcACwAAAhQUIGmHyedehIoqFXLKfPOAaZdWAAAh+QQFCgACACwAAAIABwALAAACFJQFcJiXb15zLYRl7cla8OtlGGgUADs=');
 }

@@ -41,6 +41,22 @@ window.onload = deferVideo;
   }); // end DOM ready
 })(jQuery); // end jQuery
 
+$(function () {
+   
+  // this code is for this demo only
+  $('button').click(function(){
+    $('.wrapper').toggleClass('loading');
+  });
+  
+  /*
+$('table').tablesorter({
+  theme: 'blue',
+      initialized: function(){
+        $('.wrapper').removeClass('loading');
+      }
+});
+  */
+});
 
 
 
@@ -51,11 +67,11 @@ var startPoint;
 var endPoint;
 
 //-------------------------------------------------------------------------------
-$body = $("body");
+$wrapper = $(".wrapper");
 
 $(document).on({
-    ajaxStart: function() { $body.addClass("loading");    },
-     ajaxStop: function() { $body.removeClass("loading"); }    
+    ajaxStart: function() { $wrapper.addClass("loading");    },
+     ajaxStop: function() { $wrapper.removeClass("loading"); }    
 });
 // map functions
 // function initMap() {
