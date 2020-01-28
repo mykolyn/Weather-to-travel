@@ -127,128 +127,161 @@
                 <div id="map">Google Maps</div>
                 <!-- weather forecast on route output - temperature/street or city -->
 
-                <div class="card">
-                    <div id="table-wrapper">
+                <div class="card" id="weather-output-buffer">
+                    <!-- <div id="table-wrapper"> -->
                         <div id="weather">
+                            <!-- <table id = "out" style="width:100%">
+                                <thead>
+                                      <th align="left">Binary</th>
+                                      <th align="left">Hex</th>
+                                      <th align="left">Assembly</th>
+                                      <th align="left">Description</th>
+                                </thead>
+                                <tbody id="tb">
+                                    <tr>
+                                        <th>01010101</th>
+                                        <th>1231:sdf:sdf42</th>
+                                        <th>213123</th>
+                                        <th>description</th>
+                                    </tr>
+                                </tbody>
+                            </table>    -->
                             <table class="table">
+                                <thead>
+                                    <th scope="col">City</th>
+                                    <th scope="col">Wind Speed</th>
+                                    <th scope="col">Humidity</th>
+                                    <th scope="col">Temperature</th>
 
-                                <th scope="col">City</th>
-                                <th scope="col">Wind Speed</th>
-                                <th scope="col">Humidity</th>
-                                <th scope="col">Temperature</th>
+                                    <th scope="col">Sunrise</th>
+                                    <th scope="col">Sunset</th>
+                                    <th scope="col">Sky Visibility</th>
+                                </thead>
 
-                                <th scope="col">Sunrise</th>
-                                <th scope="col">Sunset</th>
-                                <th scope="col">Sky Visibility</th>
-                                <tbody id="weatherInfo">
-
-                                </tbody id="weatherInfo">
+                                <tbody id="tb">
+                                </tbody>
                             </table>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
+
 
         <!-- end of container -->
     </div>
 
 
-
+    <table id="out" style="width:100%">
+        <thead>
+            <th align="left">Binary</th>
+            <th align="left">Hex</th>
+            <th align="left">Assembly</th>
+            <th align="left">Description</th>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <th>01010101</th>
+                <th>1231:sdf:sdf42</th>
+                <th>213123</th>
+                <th>description</th>
+            </tr>
+        </tbody>
+    </table>
 
 
 
     <!-- footer - -->
-    
-        <footer class="footer">
-            <div class="footer__addr">
-                <h1 class="footer__logo">Weather to Travel</h1>
 
-                <h2>Contact</h2>
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo">Weather to Travel</h1>
 
-                <address style="color: white;">
-                    5534 Somewhere In. The World 22193-10212<br>
+            <h2>Contact</h2>
+
+            <address style="color: white;">
+                5534 Somewhere In. The World 22193-10212<br>
 
 
-                    <a class="footer__btn" href="mailto:example@gmail.com" style="background-color: white;">Email Us</a>
-                </address>
-            </div>
+                <a class="footer__btn" href="mailto:example@gmail.com" style="background-color: white;">Email Us</a>
+            </address>
+        </div>
 
-            <ul class="footer__nav">
-                <li class="nav__item">
-                    <h2 class="nav__title">Frameworks</h2>
-    
-                    <ul class="nav__ul">
-    
-                        <li>
-                            <a href="https://getbootstrap.com/" target="_blank">BootStrap 4.4</a>
-                        </li>
-                        <li>
-                            <a href="https://mdbootstrap.com/" target="_blank">MDB</a>
-                        </li>
-    
-    
-                    </ul>
-                </li>
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">Frameworks</h2>
 
-                <li class="nav__item">
-                    <h2 class="nav__title">Libraries</h2>
-    
-                    <ul class="nav__ul">
-                        <li>
-                            <a href="https://jquery.com/" target="_blank">jQuery 3.4.1</a>
-                        </li>
-                        <li>
-                            <a href="https://projects.lukehaas.me/scrollify/#home" target="_blank">Scrollify</a>
-                        </li>
-                        <li>
-                            <a href="http://pixelcog.github.io/parallax.js" target="_blank">Parallax</a>
-                        </li>
-    
-                    </ul>
-                </li>
-                <!-- 
+                <ul class="nav__ul">
+
+                    <li>
+                        <a href="https://getbootstrap.com/" target="_blank">BootStrap 4.4</a>
+                    </li>
+                    <li>
+                        <a href="https://mdbootstrap.com/" target="_blank">MDB</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Libraries</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="https://jquery.com/" target="_blank">jQuery 3.4.1</a>
+                    </li>
+                    <li>
+                        <a href="https://projects.lukehaas.me/scrollify/#home" target="_blank">Scrollify</a>
+                    </li>
+                    <li>
+                        <a href="http://pixelcog.github.io/parallax.js" target="_blank">Parallax</a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- 
                 <li class="nav__item nav__item--extra">
                     <h2 class="nav__title">APIs</h2>
 
                     <ul class="nav__ul nav__ul--extra"> -->
 
 
-                <li class="nav__item">
-                    <h2 class="nav__title">APIs</h2>
-
-                    <ul class="nav__ul">
-                        <li>
-                            <a href="https://cloud.google.com/maps-platform/" target="_blank">Google Maps</a>
-                        </li>
-
-                        <li>
-                            <a href="https://openweathermap.org/api" target="_blank">Open Weather</a>
-                        </li>
-
-
-                </li>
-            </ul>
-
             <li class="nav__item">
-                <h2 class="nav__title" target="_blank">Resources</h2>
+                <h2 class="nav__title">APIs</h2>
 
                 <ul class="nav__ul">
                     <li>
-                        <a href="https://icons8.com/" target="_blank">icon8</a>
+                        <a href="https://cloud.google.com/maps-platform/" target="_blank">Google Maps</a>
                     </li>
+
                     <li>
-                        <a href="https://www.pexels.com/" target="_blank">Pexels</a>
+                        <a href="https://openweathermap.org/api" target="_blank">Open Weather</a>
                     </li>
-                </ul>
+
+
             </li>
+        </ul>
 
-           
+        <li class="nav__item">
+            <h2 class="nav__title" target="_blank">Resources</h2>
 
-           
+            <ul class="nav__ul">
+                <li>
+                    <a href="https://icons8.com/" target="_blank">icon8</a>
+                </li>
+                <li>
+                    <a href="https://www.pexels.com/" target="_blank">Pexels</a>
+                </li>
             </ul>
-        </footer>
-    
+        </li>
+
+
+
+
+        </ul>
+    </footer>
+
 
 
 
