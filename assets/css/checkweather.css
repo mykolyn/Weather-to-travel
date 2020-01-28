@@ -64,7 +64,7 @@ input[type=text] {
     position:relative;
   }
   #weather {
-    height:309px;
+    height:294px;
     overflow:auto;  
     margin-top:20px;
   }
@@ -86,7 +86,9 @@ input[type=text] {
 
 
 
-
+  #weather-output-buffer {
+    margin-top: 15px;
+  }
 
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window

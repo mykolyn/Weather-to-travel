@@ -42,12 +42,12 @@ window.onload = deferVideo;
 })(jQuery); // end jQuery
 
 $(function () {
-   
+
   // this code is for this demo only
-  $('button').click(function(){
+  $('button').click(function () {
     $('.wrapper').toggleClass('loading');
   });
-  
+
   /*
 $('table').tablesorter({
   theme: 'blue',
@@ -70,8 +70,8 @@ var endPoint;
 $wrapper = $(".wrapper");
 
 $(document).on({
-    ajaxStart: function() { $wrapper.addClass("loading");    },
-     ajaxStop: function() { $wrapper.removeClass("loading"); }    
+  ajaxStart: function () { $wrapper.addClass("loading"); },
+  ajaxStop: function () { $wrapper.removeClass("loading"); }
 });
 // map functions
 // function initMap() {
@@ -398,13 +398,32 @@ function getGeocodeCity(coordinates) {
 // var sampleCoords = "30.66, -88.20"
 // getGeocodeCity(sampleCoords)
 
+document.getElementById("pointA").value = localStorage.getItem("start");
+document.getElementById("pointB").value = localStorage.getItem("destination");
+
 //event listener for submit bttn:
 $("#submit").on("click", function (event) {
   event.preventDefault();
-  
+  $('#tb').empty()
+  // $("td").empty();
+  coordsToCheck = [];
+  convertedCoords = [];
   $("#directions").empty();
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
+
+  // Save user input to local storage:
+
+  function saveComment() {
+    var start = document.getElementById("pointA").value;
+    var destination = document.getElementById("pointB").value;
+    localStorage.setItem("start", start);
+    localStorage.setItem("destination", destination);
+    //return false;
+  }
+  saveComment();
+
+
   console.log("Going from " + startPoint + " to " + endPoint);
 
   convertedCoords.push(startPoint)
@@ -691,7 +710,6 @@ $("#submit").on("click", function (event) {
     });
   }
 
-
   var request = {
     origin: startPoint,
     destination: endPoint,
@@ -773,13 +791,10 @@ $("#submit").on("click", function (event) {
   //endpoint();
   console.log("---------------------convertedCoords array-------------------- " + convertedCoords)
 
-})
 
+  // Check weather for cities along the route and append info to the page. 
+  //$("#submit").on("click", function () {
 
-
-// Check weather for cities along the route and append info to the page. 
-$("#submit").on("click", function () {
-  $("#weatherInfo").empty();
   async function delay(ms) {
     // return await for better async stack trace support in case of errors.
     return await new Promise(resolve => setTimeout(resolve, ms));
@@ -805,7 +820,7 @@ $("#submit").on("click", function () {
         // console.log("+++++++")
         // console.log("___________")
         // console.log("___________")
-        $(".table").append(
+        $("#tb").append(
           $("<tr>").append(
             $("<td>").text(response.city.name),
             // console.log(response.list[1].wind),
@@ -844,13 +859,12 @@ $("#submit").on("click", function () {
       return formattedTime
     }
 
-    
+
   }
 
-  function second() {
-    coordsToCheck = [];
-    convertedCoords = [];
-  }
+  // function second() {
+
+  // }
   // Delay weather API call to allow time for cities array to be filled:
   let run = async () => {
     // await delay(1000);
@@ -860,25 +874,31 @@ $("#submit").on("click", function () {
     await delay(2000)
     first();
 
-    await delay(1000);
-    second();
+    // await delay(1000);
+    // second();
   }
 
   run();
 
 })
 
-// $(document).ready(function(){
-//   ajaxStart(){
-//     $('.mask').addClass('ajax'),\
-//   }
-//   ajaxComplete(){
-//     $('.mask').removeClass('ajax');
-//   }
-// })
 
 
-('.parallax').parallax({imageSrc: 'assets/background/back.jpg'});
+
+
+  //})
+
+  // $(document).ready(function(){
+  //   ajaxStart(){
+  //     $('.mask').addClass('ajax'),\
+  //   }
+  //   ajaxComplete(){
+  //     $('.mask').removeClass('ajax');
+  //   }
+  // })
+
+//Parallax:
+// ('.parallax').parallax({ imageSrc: 'assets/background/back.jpg' });
 // $('.parallax').parallax({imageSrc: '/assets.background.back.jpg'});
 // var image = document.getElementsByClassName('thumbnail');
 // new simpleParallax(image, {
@@ -886,15 +906,6 @@ $("#submit").on("click", function () {
 // 	transition: 'cubic-bezier(0,0,0,1)'
 // });
 // console.log(image)
-//AJAX call to convert locations into coordinates
-
-// function to find location every 50 miles from starting point:
-//
-
-//AJAX call to weather api with coordinates
-
-//render route list and append weather forecast to list
-
-//-------------------------------------------------------//
 
 
+// store location into localstorage
