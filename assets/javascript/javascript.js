@@ -41,8 +41,9 @@ window.onload = deferVideo;
   }); // end DOM ready
 })(jQuery); // end jQuery
 
-$(function () {
 
+// Puts the loading icon in an event list
+$(function () {
   // this code is for this demo only
   $('button').click(function () {
     $('.wrapper').toggleClass('loading');
@@ -59,47 +60,36 @@ $('table').tablesorter({
 });
 
 
-
-
-//retrieve input and store into variables
-
-var startPoint;
-var endPoint;
-
-//-------------------------------------------------------------------------------
+//event listener, adds loading animation when ajax call is made and waits ajax call to finish 
 $wrapper = $(".wrapper");
 
 $(document).on({
   ajaxStart: function () { $wrapper.addClass("loading"); },
   ajaxStop: function () { $wrapper.removeClass("loading"); }
 });
-// map functions
-// function initMap() {
-//   var directionsService = new google.maps.DirectionsService();
-//   var directionsRenderer = new google.maps.DirectionsRenderer();
-//   var mapOptions = {
-//     zoom: 5,
-//     center: { lat: 38, lng: -96 }
-//   }
-//   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-//   directionsRenderer.setMap(map);
-//   directionsRenderer.setPanel(document.getElementById('directions'));
+//---------------------------------------------------------------------------------------------
+
+//initial variables
+var startPoint;
+var endPoint;
+// Array to hold coordinates to check weather for
+var convertedCoords = [];
+
+
+// Google Maps, does something we dont know what it does
+// function calcRoute() {
+//   var request = {
+//     origin: startPoint,
+//     destination: endPoint,
+//     travelMode: 'DRIVING'
+//   };
+//   directionsService.route(request, function (response, status) {
+//     if (status == 'OK') {
+//       directionsRenderer.setDirections(response);
+//     }
+//   });
 // }
 
-function calcRoute() {
-  var request = {
-    origin: startPoint,
-    destination: endPoint,
-    travelMode: 'DRIVING'
-  };
-  directionsService.route(request, function (response, status) {
-    if (status == 'OK') {
-      directionsRenderer.setDirections(response);
-    }
-  });
-}
-// array to hold coordinates to check weather for
-var convertedCoords = [];
 
 //--------------------------------------------------Styling the map--------------------------------------------------------------//
 //------------------------------------------------dont touch code below-------------------------------------------------------------  
@@ -377,7 +367,7 @@ function initMap() {
 //-------------------------------------------- Dont touch this code above--------------------------------
 // ---------------------------------------------------------------------------------------------------------
 
-// Google Geocoding API to convert coordinates to address/city:
+// Google Geocoding API to convert coordinates to city and add results to array:
 function getGeocodeCity(coordinates) {
   var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coordinates + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
   $.ajax({
@@ -398,37 +388,46 @@ function getGeocodeCity(coordinates) {
 // var sampleCoords = "30.66, -88.20"
 // getGeocodeCity(sampleCoords)
 
+// Pull info from local storage to place in input form
 document.getElementById("pointA").value = localStorage.getItem("start");
 document.getElementById("pointB").value = localStorage.getItem("destination");
 
 //event listener for submit bttn:
 $("#submit").on("click", function (event) {
   event.preventDefault();
+  // empty the weather info table
   $('#tb').empty()
-  // $("td").empty();
+  // empty the route directions
+  $("#directions").empty();
+  
+  // clears array to empty previous user input
   coordsToCheck = [];
   convertedCoords = [];
-  $("#directions").empty();
+  
+  // save user inputs to variables
   var startPoint = $("#pointA").val();
   var endPoint = $("#pointB").val();
 
   // Save user input to local storage:
-
-  function saveComment() {
+    function saveComment() {
     var start = document.getElementById("pointA").value;
     var destination = document.getElementById("pointB").value;
     localStorage.setItem("start", start);
     localStorage.setItem("destination", destination);
-    //return false;
   }
+
+  // run function to save input into local storage
   saveComment();
 
 
   console.log("Going from " + startPoint + " to " + endPoint);
 
+  // add user input to array of cities to run in weather API
   convertedCoords.push(startPoint)
   convertedCoords.push(endPoint)
-  // Puts map on screen with route outlined:
+
+  //-----------------------------------------------Google Map-----------------------------------------
+  // Puts map on screen with JSON style from Google
   var styledMapType = new google.maps.StyledMapType(
     [
       {
@@ -683,10 +682,10 @@ $("#submit").on("click", function (event) {
     { name: 'Styled Map' });
   var directionsService = new google.maps.DirectionsService();
   var directionsRenderer = new google.maps.DirectionsRenderer();
+  // choose focus point for map to show
   var mapOptions = {
     zoom: 4,
     center: { lat: 38, lng: -96 }
-
   }
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -696,6 +695,7 @@ $("#submit").on("click", function (event) {
 
   directionsRenderer.setPanel(document.getElementById('directions'));
 
+  //puts route on the map
   function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     // var start = document.getElementById('pointA').value;
     // var end = document.getElementById('pointB').value;
@@ -724,8 +724,9 @@ $("#submit").on("click", function (event) {
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
   });
+  //---------------------------------------------------------------------------------------------
 
-
+  // ----------------------------Function to pull cities at 50-mile intervals from route and-----------------------
   var directionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + startPoint + "&destination=" + endPoint + "&key=AIzaSyAmLr5yU5_SJ5Jx1AA-T59scJF4xuLvLEc";
   $.ajax({
     url: directionsURL,
@@ -736,8 +737,7 @@ $("#submit").on("click", function (event) {
       console.log("Google directions API object below")
       console.log(response)
 
-
-
+      // show error message if there is an invalid address
       if (response.status == "NOT_FOUND") {
         $("#pointA").val("Invalid Address");
         $("#pointB").val("Please Try Again");
@@ -780,26 +780,17 @@ $("#submit").on("click", function (event) {
       // coordsToCheck.push(endCoords)
       return convertedCoords;
     })
+  //---------------------------------------------------------------------------------------------
 
 
-
-
-  // var endpoint = async () => {
-  //   await delay(3000);
-  //   getGeocodeCity(endCoords);
-  // }
-  //endpoint();
-  console.log("---------------------convertedCoords array-------------------- " + convertedCoords)
-
-
-  // Check weather for cities along the route and append info to the page. 
-  //$("#submit").on("click", function () {
-
+  
+  // add delay to weather api
   async function delay(ms) {
     // return await for better async stack trace support in case of errors.
     return await new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  // Run cities array through Open Weather API and append info to weather info table
   function first() {
 
     for (var i = 0; i < convertedCoords.length; i++) {
@@ -862,40 +853,17 @@ $("#submit").on("click", function (event) {
 
   }
 
-  // function second() {
-
-  // }
+  
   // Delay weather API call to allow time for cities array to be filled:
   let run = async () => {
-    // await delay(1000);
-    // first();
-    // getGeocodeCity(endCoords);
-
     await delay(2000)
     first();
-
-    // await delay(1000);
-    // second();
   }
-
   run();
-
 })
 
 
-
-
-
-  //})
-
-  // $(document).ready(function(){
-  //   ajaxStart(){
-  //     $('.mask').addClass('ajax'),\
-  //   }
-  //   ajaxComplete(){
-  //     $('.mask').removeClass('ajax');
-  //   }
-  // })
+  
 
 //Parallax:
 // ('.parallax').parallax({ imageSrc: 'assets/background/back.jpg' });
@@ -907,5 +875,3 @@ $("#submit").on("click", function (event) {
 // });
 // console.log(image)
 
-
-// store location into localstorage
